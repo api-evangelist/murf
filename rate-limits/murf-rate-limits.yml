@@ -5,7 +5,7 @@ provider: Murf
 providerId: murf
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Voice
@@ -15,21 +15,41 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Murf. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Murf documents per-region default concurrency for the Falcon streaming endpoint: US-East
+  15 concurrent, US-West 2, India 2. Global URL auto-routes to the nearest region. Higher
+  concurrency available on request.
+notes: Reconciled directly from Murf API streaming docs.
 sources:
-- https://murf.ai/
+- https://murf.ai/api/docs/introduction/overview
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: Concurrent Streams (US-East)
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: concurrent_streams
+  limit: 15
+  notes: Default concurrency cap on us-east.api.murf.ai.
+- name: Concurrent Streams (US-West)
+  scope: account
+  metric: concurrent_streams
+  limit: 2
+  notes: Default concurrency cap on us-west.api.murf.ai.
+- name: Concurrent Streams (India)
+  scope: account
+  metric: concurrent_streams
+  limit: 2
+  notes: Default concurrency cap on in.api.murf.ai.
+- name: Concurrent Streams (Global)
+  scope: account
+  metric: concurrent_streams
+  limit: region_specific
+  notes: Global URL auto-routes; concurrency follows the region the request is routed to.
 policies:
 - name: Backoff Strategy
   description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+- name: Region Pinning
+  description: Pin to us-east for highest default concurrency or use Global for auto-routing.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

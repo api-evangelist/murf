@@ -3,21 +3,58 @@ url: https://raw.githubusercontent.com/api-evangelist/murf/refs/heads/main/apis.
 name: Murf
 x-type: company
 description: >-
-  Murf is an AI voice generator producing studio-quality voiceovers in 20+ languages with 130+ voices. APIs available for batch synthesis and SDK integration.
+  Murf is an AI voice generation platform offering studio-quality voiceovers in 20+
+  languages with 130+ voices. Public APIs include Falcon TTS (ultra-fast streaming),
+  Text-to-Speech Gen 2 (studio quality), Dubbing, Voice Changer, Translation, and Voice
+  Isolator. The Murf API is REST-based at https://api.murf.ai with regional alternatives
+  (us-east, us-west, in, global). OpenAPI 3.1 published.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - Voice
   - TTS
   - Voiceover
+  - Dubbing
   - Audio
+  - Realtime
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: murf:platform
+    name: Murf API
+    description: >-
+      REST API for Falcon TTS streaming, Gen 2 TTS, Dubbing, Voice Changer, Translation,
+      and Voice Isolator. Falcon TTS streams at $0.01/min with under 130ms time-to-first-audio.
+      Multi-region: us-east, us-west, India, plus global auto-routing. OpenAPI at
+      https://murf.ai/api/docs/openapi.yaml.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://murf.ai/api/docs/introduction/overview
+    baseURL: https://api.murf.ai
+    tags:
+      - TTS
+      - Streaming
+      - Dubbing
+      - Voice Changer
+      - Translation
+    properties:
+      - type: Documentation
+        url: https://murf.ai/api/docs/introduction/overview
+      - type: OpenAPI
+        url: openapi/murf-openapi.yml
+      - type: SignUp
+        url: https://murf.ai/api/dashboard
+      - type: Pricing
+        url: https://murf.ai/api/pricing
+      - type: GitHub
+        url: https://github.com/murf-ai/murf-cookbook
 common:
   - type: Website
     url: https://murf.ai/
+  - type: Documentation
+    url: https://murf.ai/api/docs/introduction/overview
+  - type: OpenAPI
+    url: openapi/murf-openapi.yml
   - type: Plans
     url: plans/murf-plans-pricing.yml
   - type: RateLimits

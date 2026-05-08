@@ -5,7 +5,7 @@ provider: Murf
 providerId: murf
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Voice
@@ -13,29 +13,100 @@ tags:
 - Voiceover
 - Audio
 - Plans
-description: Placeholder plans/pricing artifact for Murf. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+description: >-
+  Murf API uses pay-as-you-go pricing with a flat $0.01/minute rate for Falcon TTS (no
+  tiered confusion) plus Gen 2 TTS, Dubbing, Voice Changer, Translation, and Voice Isolator
+  endpoints. Free trial API key available; Enterprise contracts negotiated.
+notes: Reconciled from public Murf API page (May 2026); per-minute rate is for Falcon TTS streaming.
 sources:
-- https://murf.ai/
+- https://murf.ai/api
+- https://murf.ai/api/pricing
 plans:
-- id: murf-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: murf-payg
+  name: Pay-as-you-go
+  type: usage
+  description: Per-minute Falcon TTS streaming with flat rate; other endpoints priced separately.
   entries:
-  - label: API Access
-    name: api_access
-    type: flat
-    metric: varies
+  - label: Falcon TTS Streaming
+    name: falcon_tts
+    type: per_minute
+    metric: minute
     limit: -1
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://murf.ai/
+    price: 0.01 USD/min
     userMultiplied: false
-  elements:
-  - name: Pending Reconciliation
+  - label: Gen 2 TTS
+    name: gen2_tts
+    type: per_unit
+    metric: minute
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: see API pricing page (per character / per minute)
+    userMultiplied: false
+  - label: Dubbing API
+    name: dubbing
+    type: per_unit
+    metric: minute
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: see API pricing page
+    userMultiplied: false
+  - label: Voice Changer API
+    name: voice_changer
+    type: per_unit
+    metric: minute
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: see API pricing page
+    userMultiplied: false
+  - label: Translation API
+    name: translation
+    type: per_unit
+    metric: minute
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: see API pricing page
+    userMultiplied: false
+- id: murf-free-trial
+  name: Free Trial API Key
+  type: free
+  description: Free API key for testing.
+  entries:
+  - label: Free Trial
+    name: free_trial
+    type: flat
+    metric: trial
+    limit: 1
+    timeFrame: trial
+    geo: global
+    unit: 1
+    price: 0 USD
+    userMultiplied: false
+- id: murf-enterprise
+  name: Enterprise
+  type: enterprise
+  description: Custom pricing with volume discounts and dedicated support.
+  entries:
+  - label: Enterprise Contract
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: annual
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

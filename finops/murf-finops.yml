@@ -5,7 +5,7 @@ provider: Murf
 providerId: murf
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Voice
@@ -15,10 +15,14 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Murf. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps view of Murf. Falcon TTS streams at a flat $0.01/min with no tiered
+  confusion. Other endpoints (Gen 2 TTS, Dubbing, Voice Changer, Translation) priced per the
+  API pricing page. Murf positions itself as up to 50% cheaper than competitor stacks.
+notes: Falcon flat rate makes per-minute budgeting trivial; other endpoints require per-product cost tracking.
 sources:
-- https://murf.ai/
+- https://murf.ai/api
+- https://murf.ai/api/pricing
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,7 +33,7 @@ alignedWith:
 publisherName: Murf
 serviceCategory: AI
 billingModel:
-  pricingCategory: To Be Reconciled
+  pricingCategory: Usage-Based (Per Minute / Per Endpoint)
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
@@ -37,7 +41,7 @@ billingModel:
   - Purchase
   - Adjustment
 focusColumns:
-  ServiceName: Murf
+  ServiceName: Murf API
   ServiceCategory: AI
   ProviderName: Murf
   PublisherName: Murf
@@ -45,22 +49,49 @@ focusColumns:
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: falcon_tts_minutes
+  description: Falcon TTS streaming minutes at $0.01/min flat.
+  unit: minute
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - region
+- name: gen2_tts_usage
+  description: Gen 2 TTS studio synthesis usage.
+  unit: minute
+  aggregation: sum
+  dimensions:
+  - account
+  - voice
+- name: dubbing_minutes
+  description: Dubbing API minutes processed.
+  unit: minute
+  aggregation: sum
+  dimensions:
+  - account
+  - target_language
+- name: voice_changer_minutes
+  description: Voice Changer API minutes processed.
+  unit: minute
+  aggregation: sum
+  dimensions:
+  - account
+- name: translation_units
+  description: Translation API usage.
+  unit: word
+  aggregation: sum
+  dimensions:
+  - account
+  - target_language
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Track per-endpoint usage in Murf API dashboard.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag voices and integrations per consuming product.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Falcon flat rate suits high-volume voice agents; reserve Gen 2 for studio quality where needed.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign owners per product (TTS, Dubbing, Voice Changer, Translation).
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
