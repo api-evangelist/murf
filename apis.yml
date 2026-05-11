@@ -61,6 +61,18 @@ common:
     url: rate-limits/murf-rate-limits.yml
   - type: FinOps
     url: finops/murf-finops.yml
+  - type: Integrations
+    url: https://murf.ai/integrations
+integrations:
+  - name: Canva
+  - name: Google Slides
+  - name: HTML Embed Code
+  - name: Adobe Audition
+  - name: Adobe Captivate
+  - name: PowerPoint
+  - name: Audio Translator
+  - name: Video Translator
+  - name: Text Translator
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
