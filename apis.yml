@@ -1,7 +1,7 @@
 aid: murf
 url: https://raw.githubusercontent.com/api-evangelist/murf/refs/heads/main/apis.yml
 name: Murf
-x-type: company
+kind: company
 description: >-
   Murf is an AI voice generation platform offering studio-quality voiceovers in 20+
   languages with 130+ voices. Public APIs include Falcon TTS (ultra-fast streaming),
