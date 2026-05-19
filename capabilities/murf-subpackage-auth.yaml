@@ -1,0 +1,76 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: API Reference — subpackage_auth
+  description: 'API Reference — subpackage_auth. 1 operations. Lead operation: Generate auth token. Self-contained Naftiko
+    capability covering one Murf business surface.'
+  tags:
+  - Murf
+  - subpackage_auth
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MURF_API_KEY: MURF_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: murf-subpackage-auth
+    baseUri: https://api.murf.ai
+    description: API Reference — subpackage_auth business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-auth-token
+      path: /v1/auth/token
+      operations:
+      - name: generatetoken
+        method: GET
+        description: Generate auth token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: api-key
+          in: header
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: murf-subpackage-auth-rest
+    port: 8080
+    description: REST adapter for API Reference — subpackage_auth. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/auth/token
+      name: v1-auth-token
+      description: REST surface for v1-auth-token.
+      operations:
+      - method: GET
+        name: generatetoken
+        description: Generate auth token
+        call: murf-subpackage-auth.generatetoken
+        with:
+          api-key: rest.api-key
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: murf-subpackage-auth-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for API Reference — subpackage_auth. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: generate-auth-token
+      description: Generate auth token
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: murf-subpackage-auth.generatetoken
+      with:
+        api-key: tools.api-key
+      outputParameters:
+      - type: object
+        mapping: $.

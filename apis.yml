@@ -2,77 +2,89 @@ aid: murf
 url: https://raw.githubusercontent.com/api-evangelist/murf/refs/heads/main/apis.yml
 name: Murf
 kind: company
-description: >-
-  Murf is an AI voice generation platform offering studio-quality voiceovers in 20+
-  languages with 130+ voices. Public APIs include Falcon TTS (ultra-fast streaming),
-  Text-to-Speech Gen 2 (studio quality), Dubbing, Voice Changer, Translation, and Voice
-  Isolator. The Murf API is REST-based at https://api.murf.ai with regional alternatives
-  (us-east, us-west, in, global). OpenAPI 3.1 published.
+description: Murf is an AI voice generation platform offering studio-quality voiceovers in 20+ languages with 130+ voices.
+  Public APIs include Falcon TTS (ultra-fast streaming), Text-to-Speech Gen 2 (studio quality), Dubbing, Voice Changer, Translation,
+  and Voice Isolator. The Murf API is REST-based at https://api.murf.ai with regional alternatives (us-east, us-west, in,
+  global). OpenAPI 3.1 published.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - AI
-  - Voice
-  - TTS
-  - Voiceover
-  - Dubbing
-  - Audio
-  - Realtime
+- AI
+- Voice
+- TTS
+- Voiceover
+- Dubbing
+- Audio
+- Realtime
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: murf:platform
-    name: Murf API
-    description: >-
-      REST API for Falcon TTS streaming, Gen 2 TTS, Dubbing, Voice Changer, Translation,
-      and Voice Isolator. Falcon TTS streams at $0.01/min with under 130ms time-to-first-audio.
-      Multi-region: us-east, us-west, India, plus global auto-routing. OpenAPI at
-      https://murf.ai/api/docs/openapi.yaml.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://murf.ai/api/docs/introduction/overview
-    baseURL: https://api.murf.ai
-    tags:
-      - TTS
-      - Streaming
-      - Dubbing
-      - Voice Changer
-      - Translation
-    properties:
-      - type: Documentation
-        url: https://murf.ai/api/docs/introduction/overview
-      - type: OpenAPI
-        url: openapi/murf-openapi.yml
-      - type: SignUp
-        url: https://murf.ai/api/dashboard
-      - type: Pricing
-        url: https://murf.ai/api/pricing
-      - type: GitHub
-        url: https://github.com/murf-ai/murf-cookbook
-common:
-  - type: Website
-    url: https://murf.ai/
+- aid: murf:platform
+  name: Murf API
+  description: 'REST API for Falcon TTS streaming, Gen 2 TTS, Dubbing, Voice Changer, Translation, and Voice Isolator. Falcon
+    TTS streams at $0.01/min with under 130ms time-to-first-audio. Multi-region: us-east, us-west, India, plus global auto-routing.
+    OpenAPI at https://murf.ai/api/docs/openapi.yaml.'
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://murf.ai/api/docs/introduction/overview
+  baseURL: https://api.murf.ai
+  tags:
+  - TTS
+  - Streaming
+  - Dubbing
+  - Voice Changer
+  - Translation
+  properties:
   - type: Documentation
     url: https://murf.ai/api/docs/introduction/overview
   - type: OpenAPI
     url: openapi/murf-openapi.yml
-  - type: Plans
-    url: plans/murf-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/murf-rate-limits.yml
-  - type: FinOps
-    url: finops/murf-finops.yml
-  - type: Integrations
-    url: https://murf.ai/integrations
+  - type: SignUp
+    url: https://murf.ai/api/dashboard
+  - type: Pricing
+    url: https://murf.ai/api/pricing
+  - type: GitHub
+    url: https://github.com/murf-ai/murf-cookbook
+  - type: NaftikoCapability
+    url: capabilities/murf-subpackage-auth.yaml
+  - type: NaftikoCapability
+    url: capabilities/murf-subpackage-dubbing-subpackage-dubbing-jobs.yaml
+  - type: NaftikoCapability
+    url: capabilities/murf-subpackage-dubbing-subpackage-dubbing-languages.yaml
+  - type: NaftikoCapability
+    url: capabilities/murf-subpackage-dubbing-subpackage-dubbing-projects.yaml
+  - type: NaftikoCapability
+    url: capabilities/murf-subpackage-text.yaml
+  - type: NaftikoCapability
+    url: capabilities/murf-subpackage-texttospeech.yaml
+  - type: NaftikoCapability
+    url: capabilities/murf-subpackage-voicechanger.yaml
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/murf-ai
+- type: Website
+  url: https://murf.ai/
+- type: Documentation
+  url: https://murf.ai/api/docs/introduction/overview
+- type: OpenAPI
+  url: openapi/murf-openapi.yml
+- type: Plans
+  url: plans/murf-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/murf-rate-limits.yml
+- type: FinOps
+  url: finops/murf-finops.yml
+- type: Integrations
+  url: https://murf.ai/integrations
 integrations:
-  - name: Canva
-  - name: Google Slides
-  - name: HTML Embed Code
-  - name: Adobe Audition
-  - name: Adobe Captivate
-  - name: PowerPoint
-  - name: Audio Translator
-  - name: Video Translator
-  - name: Text Translator
+- name: Canva
+- name: Google Slides
+- name: HTML Embed Code
+- name: Adobe Audition
+- name: Adobe Captivate
+- name: PowerPoint
+- name: Audio Translator
+- name: Video Translator
+- name: Text Translator
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

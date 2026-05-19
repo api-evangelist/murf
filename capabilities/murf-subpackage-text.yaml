@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: API Reference — subpackage_text
+  description: 'API Reference — subpackage_text. 1 operations. Lead operation: Translate. Self-contained Naftiko capability
+    covering one Murf business surface.'
+  tags:
+  - Murf
+  - subpackage_text
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MURF_API_KEY: MURF_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: murf-subpackage-text
+    baseUri: https://api.murf.ai
+    description: API Reference — subpackage_text business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-text-translate
+      path: /v1/text/translate
+      operations:
+      - name: translate
+        method: POST
+        description: Translate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: api-key
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: murf-subpackage-text-rest
+    port: 8080
+    description: REST adapter for API Reference — subpackage_text. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/text/translate
+      name: v1-text-translate
+      description: REST surface for v1-text-translate.
+      operations:
+      - method: POST
+        name: translate
+        description: Translate
+        call: murf-subpackage-text.translate
+        with:
+          api-key: rest.api-key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: murf-subpackage-text-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for API Reference — subpackage_text. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: translate
+      description: Translate
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: murf-subpackage-text.translate
+      with:
+        api-key: tools.api-key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

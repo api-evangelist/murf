@@ -1,0 +1,194 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: API Reference — subpackage_dubbing.subpackage_dubbing/projects
+  description: 'API Reference — subpackage_dubbing.subpackage_dubbing/projects. 3 operations. Lead operation: Create. Self-contained
+    Naftiko capability covering one Murf business surface.'
+  tags:
+  - Murf
+  - subpackage_dubbing.subpackage_dubbing/projects
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MURF_API_KEY: MURF_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: murf-subpackage-dubbing-subpackage-dubbing-projects
+    baseUri: https://api.murf.ai
+    description: API Reference — subpackage_dubbing.subpackage_dubbing/projects business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: v1-murfdub-projects-create
+      path: /v1/murfdub/projects/create
+      operations:
+      - name: create
+        method: POST
+        description: Create
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: api-key
+          in: header
+          type: string
+          description: Your Dub API key
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: v1-murfdub-projects-list
+      path: /v1/murfdub/projects/list
+      operations:
+      - name: list
+        method: GET
+        description: List
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: Number of Projects in response
+        - name: next
+          in: query
+          type: string
+          description: Next Page Iterator
+        - name: api-key
+          in: header
+          type: string
+          description: Your Dub API key
+          required: true
+    - name: v1-murfdub-projects-project_id-update
+      path: /v1/murfdub/projects/{project_id}/update
+      operations:
+      - name: update
+        method: PUT
+        description: Update
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project_id
+          in: path
+          type: string
+          required: true
+        - name: api-key
+          in: header
+          type: string
+          description: Your Dub API key
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: murf-subpackage-dubbing-subpackage-dubbing-projects-rest
+    port: 8080
+    description: REST adapter for API Reference — subpackage_dubbing.subpackage_dubbing/projects. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/murfdub/projects/create
+      name: v1-murfdub-projects-create
+      description: REST surface for v1-murfdub-projects-create.
+      operations:
+      - method: POST
+        name: create
+        description: Create
+        call: murf-subpackage-dubbing-subpackage-dubbing-projects.create
+        with:
+          api-key: rest.api-key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/murfdub/projects/list
+      name: v1-murfdub-projects-list
+      description: REST surface for v1-murfdub-projects-list.
+      operations:
+      - method: GET
+        name: list
+        description: List
+        call: murf-subpackage-dubbing-subpackage-dubbing-projects.list
+        with:
+          limit: rest.limit
+          next: rest.next
+          api-key: rest.api-key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/murfdub/projects/{project-id}/update
+      name: v1-murfdub-projects-project-id-update
+      description: REST surface for v1-murfdub-projects-project_id-update.
+      operations:
+      - method: PUT
+        name: update
+        description: Update
+        call: murf-subpackage-dubbing-subpackage-dubbing-projects.update
+        with:
+          project_id: rest.project_id
+          api-key: rest.api-key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: murf-subpackage-dubbing-subpackage-dubbing-projects-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for API Reference — subpackage_dubbing.subpackage_dubbing/projects. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: create
+      description: Create
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: murf-subpackage-dubbing-subpackage-dubbing-projects.create
+      with:
+        api-key: tools.api-key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list
+      description: List
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: murf-subpackage-dubbing-subpackage-dubbing-projects.list
+      with:
+        limit: tools.limit
+        next: tools.next
+        api-key: tools.api-key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update
+      description: Update
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: murf-subpackage-dubbing-subpackage-dubbing-projects.update
+      with:
+        project_id: tools.project_id
+        api-key: tools.api-key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
