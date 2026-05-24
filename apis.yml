@@ -75,6 +75,8 @@ common:
   url: finops/murf-finops.yml
 - type: Integrations
   url: https://murf.ai/integrations
+- type: LLMsTxt
+  url: https://murf.ai/llms.txt
 integrations:
 - name: Canva
 - name: Google Slides
