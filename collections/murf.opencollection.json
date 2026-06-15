@@ -1,0 +1,544 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "API Reference",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "subpackage_textToSpeech",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Stream Speech",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/speech/stream",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Synthesize speech with ultra-low latency over a streaming connection.\nChoose the `Base URL` from the URL dropdown (Global URL or a pinned Region)\n\n**Note**: Global URL auto-routes to the nearest region.\n| Region         | URL                                       | Default Concurrency |\n| ------------------------- | ---------------------------------------------- | -------------------- |\n| Global (Routes to the nearest server) | `https://global.api.murf.ai/v1/speech/stream`     | Region specific "
+        },
+        {
+          "info": {
+            "name": "Synthesize Speech",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/speech/generate",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a url to the generated audio file along with other associated properties."
+        },
+        {
+          "info": {
+            "name": "List Voices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/speech/voices",
+            "headers": [
+              {
+                "name": "token",
+                "value": ""
+              },
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "model",
+                "value": "",
+                "type": "query",
+                "description": "Valid values: FALCON, GEN2"
+              }
+            ]
+          },
+          "docs": "Returns a list of available voices for speech synthesis"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "subpackage_voiceChanger",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Voice Changer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/voice-changer/convert",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "audio_duration",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "channel_type",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "encode_output_as_base64",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "format",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "multi_native_locale",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "pitch",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "pronunciation_dictionary",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "rate",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "retain_accent",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "retain_prosody",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "return_transcription",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "sample_rate",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "style",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "transcription",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "variation",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "voice_id",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Returns a url to the generated audio file along with other associated properties."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "subpackage_text",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Translate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/text/translate",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Translate"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "subpackage_auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate auth token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/auth/token",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Generates an auth token for authenticating your requests"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "subpackage_dubbing.subpackage_dubbing/languages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Destination Languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/murfdub/list-destination-languages",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "List Destination Languages"
+        },
+        {
+          "info": {
+            "name": "List Source Languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/murfdub/list-source-languages",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "List Source Languages"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "subpackage_dubbing.subpackage_dubbing/jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/murfdub/jobs/create",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "source_locale",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "target_locales",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "webhook_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_name",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "priority",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "webhook_secret",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Create"
+        },
+        {
+          "info": {
+            "name": "Create With Project Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/murfdub/jobs/create-with-project-id",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "project_id",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "webhook_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_name",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "priority",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "webhook_secret",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Create With Project Id"
+        },
+        {
+          "info": {
+            "name": "Get Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/murfdub/jobs/:job_id/status",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Status"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "subpackage_dubbing.subpackage_dubbing/projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/murfdub/projects/create",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create"
+        },
+        {
+          "info": {
+            "name": "List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/murfdub/projects/list",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of Projects in response"
+              },
+              {
+                "name": "next",
+                "value": "",
+                "type": "query",
+                "description": "Next Page Iterator"
+              }
+            ]
+          },
+          "docs": "List"
+        },
+        {
+          "info": {
+            "name": "Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.murf.ai/v1/murfdub/projects/:project_id/update",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "project_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
