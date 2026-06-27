@@ -40,7 +40,7 @@ apis:
         url: https://murf.ai/api/docs/introduction/overview
       - type: OpenAPI
         url: openapi/murf-openapi.yml
-      - type: SignUp
+      - type: Signup
         url: https://murf.ai/api/dashboard
       - type: Pricing
         url: https://murf.ai/api/pricing
@@ -63,7 +63,7 @@ common:
     url: finops/murf-finops.yml
   - type: Integrations
     url: https://murf.ai/integrations
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://murf.ai/llms.txt
 integrations:
   - name: Canva
