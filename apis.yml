@@ -47,6 +47,8 @@ apis:
       - type: GitHub
         url: https://github.com/murf-ai/murf-cookbook
 common:
+  - type: AgenticAccess
+    url: agentic-access/murf-agentic-access.yml
   - type: TrustCenter
     url: security/murf-trust-center.yml
   - type: DomainSecurity
