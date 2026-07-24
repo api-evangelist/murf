@@ -1,0 +1,129 @@
+openapi: 3.1.0
+info:
+  title: API Reference subpackage_auth subpackage_text API
+  version: 1.0.0
+servers:
+- url: https://api.murf.ai
+- url: https://global.api.murf.ai
+- url: https://us-east.api.murf.ai
+- url: https://us-west.api.murf.ai
+- url: https://in.api.murf.ai
+- url: https://ca.api.murf.ai
+- url: https://kr.api.murf.ai
+- url: https://me.api.murf.ai
+- url: https://jp.api.murf.ai
+- url: https://au.api.murf.ai
+- url: https://eu-central.api.murf.ai
+- url: https://uk.api.murf.ai
+- url: https://sa-east.api.murf.ai
+tags:
+- name: subpackage_text
+paths:
+  /v1/text/translate:
+    post:
+      operationId: translate
+      summary: Translate
+      tags:
+      - subpackage_text
+      parameters:
+      - name: api-key
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MurfApiTranslationResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '402':
+          description: Expired subscription or character limit exhausted
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '403':
+          description: Invalid or expired token provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MurfApiTranslationRequest'
+components:
+  schemas:
+    MurfApiTranslationResponse:
+      type: object
+      properties:
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        translations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Translation'
+      title: MurfApiTranslationResponse
+    Translation:
+      type: object
+      properties:
+        source_text:
+          type: string
+        translated_text:
+          type: string
+      title: Translation
+    Metadata:
+      type: object
+      properties:
+        character_count:
+          $ref: '#/components/schemas/CharacterCount'
+        credits_used:
+          type: number
+          format: double
+        target_language:
+          type: string
+      title: Metadata
+    CharacterCount:
+      type: object
+      properties:
+        total_source_text_length:
+          type: integer
+        total_translated_text_length:
+          type: integer
+      title: CharacterCount
+    MurfApiTranslationRequest:
+      type: object
+      properties:
+        targetLanguage:
+          type: string
+          description: The language code for the target translation
+        texts:
+          type: array
+          items:
+            type: string
+          description: List of texts to translate
+      required:
+      - targetLanguage
+      - texts
+      title: MurfApiTranslationRequest

@@ -1,0 +1,269 @@
+openapi: 3.1.0
+info:
+  title: API Reference subpackage_auth subpackage_dubbing.subpackage_dubbing/projects API
+  version: 1.0.0
+servers:
+- url: https://api.murf.ai
+- url: https://global.api.murf.ai
+- url: https://us-east.api.murf.ai
+- url: https://us-west.api.murf.ai
+- url: https://in.api.murf.ai
+- url: https://ca.api.murf.ai
+- url: https://kr.api.murf.ai
+- url: https://me.api.murf.ai
+- url: https://jp.api.murf.ai
+- url: https://au.api.murf.ai
+- url: https://eu-central.api.murf.ai
+- url: https://uk.api.murf.ai
+- url: https://sa-east.api.murf.ai
+tags:
+- name: subpackage_dubbing.subpackage_dubbing/projects
+paths:
+  /v1/murfdub/projects/create:
+    post:
+      operationId: create
+      summary: Create
+      tags:
+      - subpackage_dubbing.subpackage_dubbing/projects
+      parameters:
+      - name: api-key
+        in: header
+        description: Your Dub API key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiProjectResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '403':
+          description: Invalid or expired token provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiCreateProjectRequest'
+  /v1/murfdub/projects/list:
+    get:
+      operationId: list
+      summary: List
+      tags:
+      - subpackage_dubbing.subpackage_dubbing/projects
+      parameters:
+      - name: limit
+        in: query
+        description: Number of Projects in response
+        required: false
+        schema:
+          type: integer
+      - name: next
+        in: query
+        description: Next Page Iterator
+        required: false
+        schema:
+          type: string
+      - name: api-key
+        in: header
+        description: Your Dub API key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupApiProjectResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '403':
+          description: Invalid or expired token provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+  /v1/murfdub/projects/{project_id}/update:
+    put:
+      operationId: update
+      summary: Update
+      tags:
+      - subpackage_dubbing.subpackage_dubbing/projects
+      parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: api-key
+        in: header
+        description: Your Dub API key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiProjectResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '403':
+          description: Invalid or expired token provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiUpdateProjectRequest'
+components:
+  schemas:
+    ApiProjectResponse:
+      type: object
+      properties:
+        project_id:
+          type: string
+          description: Your Project Id
+        name:
+          type: string
+          description: Project Name
+        description:
+          type: string
+        source_locale:
+          type: string
+          description: Source Locale
+        dubbing_type:
+          $ref: '#/components/schemas/ApiProjectResponseDubbingType'
+          description: Dubbing Type
+        target_locales:
+          type: array
+          items:
+            type: string
+          description: List of target locales
+      required:
+      - project_id
+      - dubbing_type
+      - target_locales
+      title: ApiProjectResponse
+    GroupApiProjectResponse:
+      type: object
+      properties:
+        next:
+          type: string
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiProjectResponse'
+          description: List of Projects
+      required:
+      - projects
+      title: GroupApiProjectResponse
+    ApiCreateProjectRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Your Project Name
+        source_locale:
+          type: string
+          description: Source Locale
+        dubbing_type:
+          $ref: '#/components/schemas/ApiCreateProjectRequestDubbingType'
+        description:
+          type: string
+        target_locales:
+          type: array
+          items:
+            type: string
+          description: List of target locales
+      required:
+      - name
+      - dubbing_type
+      - target_locales
+      title: ApiCreateProjectRequest
+    ApiProjectResponseDubbingType:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      description: Dubbing Type
+      title: ApiProjectResponseDubbingType
+    ApiCreateProjectRequestDubbingType:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      title: ApiCreateProjectRequestDubbingType
+    ApiUpdateProjectRequest:
+      type: object
+      properties:
+        target_locales:
+          type: array
+          items:
+            type: string
+          description: List of target locales
+      required:
+      - target_locales
+      title: ApiUpdateProjectRequest

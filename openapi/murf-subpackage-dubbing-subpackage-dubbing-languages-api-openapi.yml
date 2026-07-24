@@ -1,0 +1,150 @@
+openapi: 3.1.0
+info:
+  title: API Reference subpackage_auth subpackage_dubbing.subpackage_dubbing/languages API
+  version: 1.0.0
+servers:
+- url: https://api.murf.ai
+- url: https://global.api.murf.ai
+- url: https://us-east.api.murf.ai
+- url: https://us-west.api.murf.ai
+- url: https://in.api.murf.ai
+- url: https://ca.api.murf.ai
+- url: https://kr.api.murf.ai
+- url: https://me.api.murf.ai
+- url: https://jp.api.murf.ai
+- url: https://au.api.murf.ai
+- url: https://eu-central.api.murf.ai
+- url: https://uk.api.murf.ai
+- url: https://sa-east.api.murf.ai
+tags:
+- name: subpackage_dubbing.subpackage_dubbing/languages
+paths:
+  /v1/murfdub/list-destination-languages:
+    get:
+      operationId: list-destination-languages
+      summary: List Destination Languages
+      tags:
+      - subpackage_dubbing.subpackage_dubbing/languages
+      parameters:
+      - name: api-key
+        in: header
+        description: Your Dub API key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LocaleResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '403':
+          description: Invalid or expired token provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+  /v1/murfdub/list-source-languages:
+    get:
+      operationId: list-source-languages
+      summary: List Source Languages
+      tags:
+      - subpackage_dubbing.subpackage_dubbing/languages
+      parameters:
+      - name: api-key
+        in: header
+        description: Your Dub API key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SourceLocaleResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '403':
+          description: Invalid or expired token provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+components:
+  schemas:
+    SourceLocaleResponse:
+      type: object
+      properties:
+        locale:
+          type: string
+        language:
+          type: string
+      required:
+      - locale
+      - language
+      title: SourceLocaleResponse
+    LocaleResponseSupportsItems:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      description: Dubbing Type supported by locale
+      title: LocaleResponseSupportsItems
+    LocaleResponse:
+      type: object
+      properties:
+        locale:
+          type: string
+        language:
+          type: string
+        supports:
+          type: array
+          items:
+            $ref: '#/components/schemas/LocaleResponseSupportsItems'
+          description: Dubbing Type supported by locale
+      required:
+      - locale
+      - language
+      - supports
+      title: LocaleResponse

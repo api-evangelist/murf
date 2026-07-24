@@ -1,0 +1,328 @@
+openapi: 3.1.0
+info:
+  title: API Reference subpackage_auth subpackage_dubbing.subpackage_dubbing/jobs API
+  version: 1.0.0
+servers:
+- url: https://api.murf.ai
+- url: https://global.api.murf.ai
+- url: https://us-east.api.murf.ai
+- url: https://us-west.api.murf.ai
+- url: https://in.api.murf.ai
+- url: https://ca.api.murf.ai
+- url: https://kr.api.murf.ai
+- url: https://me.api.murf.ai
+- url: https://jp.api.murf.ai
+- url: https://au.api.murf.ai
+- url: https://eu-central.api.murf.ai
+- url: https://uk.api.murf.ai
+- url: https://sa-east.api.murf.ai
+tags:
+- name: subpackage_dubbing.subpackage_dubbing/jobs
+paths:
+  /v1/murfdub/jobs/create:
+    post:
+      operationId: create
+      summary: Create
+      tags:
+      - subpackage_dubbing.subpackage_dubbing/jobs
+      parameters:
+      - name: api-key
+        in: header
+        description: Your Dub API key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiJobResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '403':
+          description: Invalid or expired token provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The file to upload
+                file_url:
+                  type: string
+                source_locale:
+                  type: string
+                  description: Source locale
+                target_locales:
+                  type: array
+                  items:
+                    type: string
+                  description: List of target locales
+                webhook_url:
+                  type: string
+                file_name:
+                  type: string
+                priority:
+                  $ref: '#/components/schemas/V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriority'
+                  description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
+                webhook_secret:
+                  type: string
+              required:
+              - target_locales
+  /v1/murfdub/jobs/create-with-project-id:
+    post:
+      operationId: create-with-project-id
+      summary: Create With Project Id
+      tags:
+      - subpackage_dubbing.subpackage_dubbing/jobs
+      parameters:
+      - name: api-key
+        in: header
+        description: Your Dub API key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiJobResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '403':
+          description: Invalid or expired token provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The file to upload
+                file_url:
+                  type: string
+                project_id:
+                  type: string
+                  description: Your Project Id
+                webhook_url:
+                  type: string
+                file_name:
+                  type: string
+                priority:
+                  $ref: '#/components/schemas/V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority'
+                  description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
+                webhook_secret:
+                  type: string
+              required:
+              - project_id
+  /v1/murfdub/jobs/{job_id}/status:
+    get:
+      operationId: get-status
+      summary: Get Status
+      tags:
+      - subpackage_dubbing.subpackage_dubbing/jobs
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: api-key
+        in: header
+        description: Your Dub API key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DubJobStatusResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '403':
+          description: Invalid or expired token provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+components:
+  schemas:
+    ApiJobResponsePriority:
+      type: string
+      enum:
+      - LOW
+      - NORMAL
+      - HIGH
+      description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
+      title: ApiJobResponsePriority
+    ApiJobResponse:
+      type: object
+      properties:
+        file_url:
+          type: string
+        dubbing_type:
+          $ref: '#/components/schemas/ApiJobResponseDubbingType'
+          description: Dubbing Type
+        webhook_url:
+          type: string
+        file_name:
+          type: string
+          description: Your Uploaded File Name
+        priority:
+          $ref: '#/components/schemas/ApiJobResponsePriority'
+          description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
+        source_locale:
+          type: string
+          description: Source locale
+        job_id:
+          type: string
+          description: Your Job Id
+        target_locales:
+          type: array
+          items:
+            type: string
+          description: List of target locales
+        warning:
+          type: string
+      required:
+      - dubbing_type
+      - file_name
+      - priority
+      - job_id
+      - target_locales
+      title: ApiJobResponse
+    DubApiDetailResponse:
+      type: object
+      properties:
+        locale:
+          type: string
+        status:
+          type: string
+        error_message:
+          type: string
+        download_url:
+          type: string
+        download_srt_url:
+          type: string
+      title: DubApiDetailResponse
+    ApiJobResponseDubbingType:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      description: Dubbing Type
+      title: ApiJobResponseDubbingType
+    V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority:
+      type: string
+      enum:
+      - LOW
+      - NORMAL
+      - HIGH
+      description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
+      title: V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority
+    V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriority:
+      type: string
+      enum:
+      - LOW
+      - NORMAL
+      - HIGH
+      description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
+      title: V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriority
+    DubJobStatusResponse:
+      type: object
+      properties:
+        project_id:
+          type: string
+          description: Your Project Id
+        job_id:
+          type: string
+          description: Your Job Id
+        status:
+          type: string
+          description: Your Job Status
+        download_details:
+          type: array
+          items:
+            $ref: '#/components/schemas/DubApiDetailResponse'
+        credits_used:
+          type: integer
+          format: int64
+        credits_remaining:
+          type: integer
+          format: int64
+        failure_reason:
+          type: string
+        failure_code:
+          type: string
+      required:
+      - job_id
+      - status
+      title: DubJobStatusResponse

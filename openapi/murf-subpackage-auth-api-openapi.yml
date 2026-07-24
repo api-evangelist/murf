@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: API Reference subpackage_auth API
+  version: 1.0.0
+servers:
+- url: https://api.murf.ai
+- url: https://global.api.murf.ai
+- url: https://us-east.api.murf.ai
+- url: https://us-west.api.murf.ai
+- url: https://in.api.murf.ai
+- url: https://ca.api.murf.ai
+- url: https://kr.api.murf.ai
+- url: https://me.api.murf.ai
+- url: https://jp.api.murf.ai
+- url: https://au.api.murf.ai
+- url: https://eu-central.api.murf.ai
+- url: https://uk.api.murf.ai
+- url: https://sa-east.api.murf.ai
+tags:
+- name: subpackage_auth
+paths:
+  /v1/auth/token:
+    get:
+      operationId: generate-token
+      summary: Generate auth token
+      description: Generates an auth token for authenticating your requests
+      tags:
+      - subpackage_auth
+      parameters:
+      - name: api-key
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthTokenResponse'
+        '400':
+          description: Bad request or missing api-key header
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '401':
+          description: Bad api-key provided
+          content:
+            application/json:
+              schema:
+                description: Any type
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                description: Any type
+components:
+  schemas:
+    AuthTokenResponse:
+      type: object
+      properties:
+        expiryInEpochMillis:
+          type: integer
+          format: int64
+          description: The timestamp at which the generated token will expire - in Unix time.
+        token:
+          type: string
+      title: AuthTokenResponse
