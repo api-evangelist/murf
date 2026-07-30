@@ -7,7 +7,19 @@ description: >-
   APIs include Falcon TTS (ultra-fast streaming), Text-to-Speech Gen 2 (studio quality), Dubbing, Voice Changer,
   Translation, and Voice Isolator. The Murf API is REST-based at https://api.murf.ai with regional alternatives
   (us-east, us-west, in, global). OpenAPI 3.1 published.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: true
+  try_now: false
+  public: false
+  label: Freemium (free trial)
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/murf.png
 tags:
   - AI
   - Voice
@@ -20,32 +32,135 @@ created: '2026-05-08'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: murf:platform
-    name: Murf API
-    description: >-
-      REST API for Falcon TTS streaming, Gen 2 TTS, Dubbing, Voice Changer, Translation, and Voice Isolator. Falcon TTS
-      streams at $0.01/min with under 130ms time-to-first-audio. Multi-region: us-east, us-west, India, plus global
-      auto-routing. OpenAPI at https://murf.ai/api/docs/openapi.yaml.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://murf.ai/api/docs/introduction/overview
-    baseURL: https://api.murf.ai
-    tags:
-      - TTS
-      - Streaming
-      - Dubbing
-      - Voice Changer
-      - Translation
-    properties:
-      - type: Documentation
-        url: https://murf.ai/api/docs/introduction/overview
-      - type: OpenAPI
-        url: openapi/murf-openapi.yml
-      - type: Signup
-        url: https://murf.ai/api/dashboard
-      - type: Pricing
-        url: https://murf.ai/api/pricing
-      - type: GitHub
-        url: https://github.com/murf-ai/murf-cookbook
+- aid: murf:murf-subpackage-auth-api
+  name: Murf subpackage_auth API
+  description: The subpackage_auth API from Murf — 1 operation(s) for subpackage_auth.
+  humanURL: https://murf.ai/api/docs/introduction/overview
+  baseURL: https://api.murf.ai
+  tags:
+  - subpackage_auth
+  properties:
+  - type: OpenAPI
+    url: openapi/murf-subpackage-auth-api-openapi.yml
+  - type: Documentation
+    url: https://murf.ai/api/docs/introduction/overview
+  - type: Signup
+    url: https://murf.ai/api/dashboard
+  - type: Pricing
+    url: https://murf.ai/api/pricing
+  - type: GitHub
+    url: https://github.com/murf-ai/murf-cookbook
+- aid: murf:murf-subpackage-dubbing-subpackage-dubbing-jobs-api
+  name: Murf subpackage_dubbing.subpackage_dubbing/jobs API
+  description: >-
+    The subpackage_dubbing.subpackage_dubbing/jobs API from Murf — 3 operation(s) for subpackage_dubbing.subpackage_dubbing/jobs.
+  humanURL: https://murf.ai/api/docs/introduction/overview
+  baseURL: https://api.murf.ai
+  tags:
+  - subpackage_dubbing.subpackage_dubbing/jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/murf-subpackage-dubbing-subpackage-dubbing-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://murf.ai/api/docs/introduction/overview
+  - type: Signup
+    url: https://murf.ai/api/dashboard
+  - type: Pricing
+    url: https://murf.ai/api/pricing
+  - type: GitHub
+    url: https://github.com/murf-ai/murf-cookbook
+- aid: murf:murf-subpackage-dubbing-subpackage-dubbing-languages-api
+  name: Murf subpackage_dubbing.subpackage_dubbing/languages API
+  description: >-
+    The subpackage_dubbing.subpackage_dubbing/languages API from Murf — 2 operation(s) for subpackage_dubbing.subpackage_dubbing/languages.
+  humanURL: https://murf.ai/api/docs/introduction/overview
+  baseURL: https://api.murf.ai
+  tags:
+  - subpackage_dubbing.subpackage_dubbing/languages
+  properties:
+  - type: OpenAPI
+    url: openapi/murf-subpackage-dubbing-subpackage-dubbing-languages-api-openapi.yml
+  - type: Documentation
+    url: https://murf.ai/api/docs/introduction/overview
+  - type: Signup
+    url: https://murf.ai/api/dashboard
+  - type: Pricing
+    url: https://murf.ai/api/pricing
+  - type: GitHub
+    url: https://github.com/murf-ai/murf-cookbook
+- aid: murf:murf-subpackage-dubbing-subpackage-dubbing-projects-api
+  name: Murf subpackage_dubbing.subpackage_dubbing/projects API
+  description: >-
+    The subpackage_dubbing.subpackage_dubbing/projects API from Murf — 3 operation(s) for subpackage_dubbing.subpackage_dubbing/projects.
+  humanURL: https://murf.ai/api/docs/introduction/overview
+  baseURL: https://api.murf.ai
+  tags:
+  - subpackage_dubbing.subpackage_dubbing/projects
+  properties:
+  - type: OpenAPI
+    url: openapi/murf-subpackage-dubbing-subpackage-dubbing-projects-api-openapi.yml
+  - type: Documentation
+    url: https://murf.ai/api/docs/introduction/overview
+  - type: Signup
+    url: https://murf.ai/api/dashboard
+  - type: Pricing
+    url: https://murf.ai/api/pricing
+  - type: GitHub
+    url: https://github.com/murf-ai/murf-cookbook
+- aid: murf:murf-subpackage-text-api
+  name: Murf subpackage_text API
+  description: The subpackage_text API from Murf — 1 operation(s) for subpackage_text.
+  humanURL: https://murf.ai/api/docs/introduction/overview
+  baseURL: https://api.murf.ai
+  tags:
+  - subpackage_text
+  properties:
+  - type: OpenAPI
+    url: openapi/murf-subpackage-text-api-openapi.yml
+  - type: Documentation
+    url: https://murf.ai/api/docs/introduction/overview
+  - type: Signup
+    url: https://murf.ai/api/dashboard
+  - type: Pricing
+    url: https://murf.ai/api/pricing
+  - type: GitHub
+    url: https://github.com/murf-ai/murf-cookbook
+- aid: murf:murf-subpackage-texttospeech-api
+  name: Murf subpackage_textToSpeech API
+  description: The subpackage_textToSpeech API from Murf — 3 operation(s) for subpackage_texttospeech.
+  humanURL: https://murf.ai/api/docs/introduction/overview
+  baseURL: https://api.murf.ai
+  tags:
+  - subpackage_textToSpeech
+  properties:
+  - type: OpenAPI
+    url: openapi/murf-subpackage-texttospeech-api-openapi.yml
+  - type: Documentation
+    url: https://murf.ai/api/docs/introduction/overview
+  - type: Signup
+    url: https://murf.ai/api/dashboard
+  - type: Pricing
+    url: https://murf.ai/api/pricing
+  - type: GitHub
+    url: https://github.com/murf-ai/murf-cookbook
+- aid: murf:murf-subpackage-voicechanger-api
+  name: Murf subpackage_voiceChanger API
+  description: The subpackage_voiceChanger API from Murf — 1 operation(s) for subpackage_voicechanger.
+  humanURL: https://murf.ai/api/docs/introduction/overview
+  baseURL: https://api.murf.ai
+  tags:
+  - subpackage_voiceChanger
+  properties:
+  - type: OpenAPI
+    url: openapi/murf-subpackage-voicechanger-api-openapi.yml
+  - type: Documentation
+    url: https://murf.ai/api/docs/introduction/overview
+  - type: Signup
+    url: https://murf.ai/api/dashboard
+  - type: Pricing
+    url: https://murf.ai/api/pricing
+  - type: GitHub
+    url: https://github.com/murf-ai/murf-cookbook
 common:
   - type: AgenticAccess
     url: agentic-access/murf-agentic-access.yml
