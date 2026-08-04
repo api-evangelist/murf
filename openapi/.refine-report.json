@@ -1,0 +1,26 @@
+{
+  "provider": "murf",
+  "sources": [
+    "murf-subpackage-auth-api-openapi.yml",
+    "murf-subpackage-dubbing-subpackage-dubbing-jobs-api-openapi.yml",
+    "murf-subpackage-dubbing-subpackage-dubbing-languages-api-openapi.yml",
+    "murf-subpackage-dubbing-subpackage-dubbing-projects-api-openapi.yml",
+    "murf-subpackage-text-api-openapi.yml",
+    "murf-subpackage-texttospeech-api-openapi.yml",
+    "murf-subpackage-voicechanger-api-openapi.yml"
+  ],
+  "outputs": [
+    "murf-subpackage-auth-api-openapi.yml",
+    "murf-subpackage-dubbing-subpackage-dubbing-jobs-api-openapi.yml",
+    "murf-subpackage-dubbing-subpackage-dubbing-languages-api-openapi.yml",
+    "murf-subpackage-dubbing-subpackage-dubbing-projects-api-openapi.yml",
+    "murf-subpackage-text-api-openapi.yml",
+    "murf-subpackage-texttospeech-api-openapi.yml",
+    "murf-subpackage-voicechanger-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
