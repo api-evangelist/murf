@@ -175,7 +175,7 @@ common:
   - type: Documentation
     url: https://murf.ai/api/docs/introduction/overview
   - type: OpenAPI
-    url: openapi/murf-openapi.yml
+    url: openapi/_original/murf-openapi.yml
   - type: Plans
     url: plans/murf-plans-pricing.yml
   - type: RateLimits
