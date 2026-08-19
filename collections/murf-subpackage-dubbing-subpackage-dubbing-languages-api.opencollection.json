@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "API Reference subpackage_auth subpackage_dubbing.subpackage_dubbing/languages API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "subpackage_dubbing.subpackage_dubbing/languages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Destination Languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/murfdub/list-destination-languages",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "List Destination Languages"
+        },
+        {
+          "info": {
+            "name": "List Source Languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/murfdub/list-source-languages",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "List Source Languages"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

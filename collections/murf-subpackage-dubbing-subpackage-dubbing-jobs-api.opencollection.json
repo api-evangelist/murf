@@ -1,0 +1,161 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "API Reference subpackage_auth subpackage_dubbing.subpackage_dubbing/jobs API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "subpackage_dubbing.subpackage_dubbing/jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/murfdub/jobs/create",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "source_locale",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "target_locales",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "webhook_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_name",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "priority",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "webhook_secret",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Create"
+        },
+        {
+          "info": {
+            "name": "Create With Project Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/murfdub/jobs/create-with-project-id",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "project_id",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "webhook_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_name",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "priority",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "webhook_secret",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Create With Project Id"
+        },
+        {
+          "info": {
+            "name": "Get Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/murfdub/jobs/:job_id/status",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

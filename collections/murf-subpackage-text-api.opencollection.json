@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "API Reference subpackage_auth subpackage_text API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "subpackage_text",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Translate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/text/translate",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Translate"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

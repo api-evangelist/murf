@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "API Reference subpackage_auth subpackage_textToSpeech API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "subpackage_textToSpeech",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Stream Speech",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/speech/stream",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Synthesize speech with ultra-low latency over a streaming connection.\nChoose the `Base URL` from the URL dropdown (Global URL or a pinned Region)\n\n**Note**: Global URL auto-routes to the nearest region.\n| Region         | URL                                       | Default Concurrency |\n| ------------------------- | ---------------------------------------------- | -------------------- |\n| Global (Routes to the nearest server) | `https://global.api.murf.ai/v1/speech/stream`     | Region specific "
+        },
+        {
+          "info": {
+            "name": "Synthesize Speech",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/speech/generate",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a url to the generated audio file along with other associated properties."
+        },
+        {
+          "info": {
+            "name": "List Voices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.murf.ai/v1/speech/voices",
+            "headers": [
+              {
+                "name": "token",
+                "value": ""
+              },
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "model",
+                "value": "",
+                "type": "query",
+                "description": "Valid values: FALCON, GEN2"
+              }
+            ]
+          },
+          "docs": "Returns a list of available voices for speech synthesis"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

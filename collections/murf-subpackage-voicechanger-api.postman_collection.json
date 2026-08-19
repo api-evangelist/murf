@@ -1,0 +1,1445 @@
+{
+  "item": [
+    {
+      "id": "c70a43ac-3c22-4b8e-b071-596cee55fed6",
+      "name": "subpackage_voiceChanger",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8fb16fb6-5de6-4899-ae66-be9ff79a9197",
+          "name": "Voice Changer",
+          "request": {
+            "name": "Voice Changer",
+            "description": {
+              "content": "Returns a url to the generated audio file along with other associated properties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "voice-changer",
+                "convert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "api-key",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "voice_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie)."
+                },
+                {
+                  "key": "audio_duration",
+                  "value": "<double>",
+                  "type": "text",
+                  "description": "This parameter allows specifying the duration (in seconds) for the generated audio. If the value is 0, this parameter will be ignored. Only available for Gen2 model."
+                },
+                {
+                  "key": "channel_type",
+                  "value": "MONO",
+                  "type": "text",
+                  "description": "Valid values: STEREO, MONO"
+                },
+                {
+                  "key": "encode_output_as_base64",
+                  "value": "<boolean>",
+                  "type": "text",
+                  "description": "Set to true to receive audio in response as a Base64 encoded string along with a url."
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "The file to upload"
+                },
+                {
+                  "key": "file_url",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "format",
+                  "value": "WAV",
+                  "type": "text",
+                  "description": "Format of the generated audio file. Valid values: MP3, WAV, FLAC, ALAW, ULAW"
+                },
+                {
+                  "key": "multi_native_locale",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively. Only available in the Gen2 model.\nValid values: \"en-US\", \"en-UK\", \"es-ES\", etc.\n\nUse the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages."
+                },
+                {
+                  "key": "pitch",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "Pitch of the voiceover"
+                },
+                {
+                  "key": "pronunciation_dictionary",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "A JSON string that defines custom pronunciations for specific words or phrases. Each key is a word or phrase, and its value is an object with `type` and `pronunciation`.\n\nExample 1: '{\"live\": {\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}'\n\nExample 2: '{\"2022\": {\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}'"
+                },
+                {
+                  "key": "rate",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "Speed of the voiceover"
+                },
+                {
+                  "key": "retain_accent",
+                  "value": "true",
+                  "type": "text",
+                  "description": "Set to true to retain the original accent of the speaker during voice generation."
+                },
+                {
+                  "key": "retain_prosody",
+                  "value": "true",
+                  "type": "text",
+                  "description": "Indicates whether to retain the original prosody (intonation, rhythm, and stress) of the input voice in the generated output."
+                },
+                {
+                  "key": "return_transcription",
+                  "value": "false",
+                  "type": "text",
+                  "description": "Set to true to include a textual transcription of the generated audio in the response."
+                },
+                {
+                  "key": "sample_rate",
+                  "value": "44100",
+                  "type": "text",
+                  "description": "Valid values are 8000, 24000, 44100, 48000"
+                },
+                {
+                  "key": "style",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "The voice style to be used for voiceover generation."
+                },
+                {
+                  "key": "transcription",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "This parameter allows specifying a transcription of the audio clip, which will then be used as input for the voice changer"
+                },
+                {
+                  "key": "variation",
+                  "value": "1",
+                  "type": "text",
+                  "description": "Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bb637c03-fc18-460b-b755-260f58d9ea15",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice-changer",
+                    "convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).",
+                        "type": "text/plain"
+                      },
+                      "key": "voice_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying the duration (in seconds) for the generated audio. If the value is 0, this parameter will be ignored. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "audio_duration",
+                      "value": "<double>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values: STEREO, MONO",
+                        "type": "text/plain"
+                      },
+                      "key": "channel_type",
+                      "value": "MONO",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to receive audio in response as a Base64 encoded string along with a url.",
+                        "type": "text/plain"
+                      },
+                      "key": "encode_output_as_base64",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The file to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Format of the generated audio file. Valid values: MP3, WAV, FLAC, ALAW, ULAW",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "WAV",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively. Only available in the Gen2 model.\nValid values: \"en-US\", \"en-UK\", \"es-ES\", etc.\n\nUse the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.",
+                        "type": "text/plain"
+                      },
+                      "key": "multi_native_locale",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pitch of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "pitch",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "A JSON string that defines custom pronunciations for specific words or phrases. Each key is a word or phrase, and its value is an object with `type` and `pronunciation`.\n\nExample 1: '{\"live\": {\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}'\n\nExample 2: '{\"2022\": {\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}'",
+                        "type": "text/plain"
+                      },
+                      "key": "pronunciation_dictionary",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Speed of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "rate",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to retain the original accent of the speaker during voice generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_accent",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Indicates whether to retain the original prosody (intonation, rhythm, and stress) of the input voice in the generated output.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_prosody",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to include a textual transcription of the generated audio in the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "return_transcription",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values are 8000, 24000, 44100, 48000",
+                        "type": "text/plain"
+                      },
+                      "key": "sample_rate",
+                      "value": "44100",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The voice style to be used for voiceover generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "style",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying a transcription of the audio clip, which will then be used as input for the voice changer",
+                        "type": "text/plain"
+                      },
+                      "key": "transcription",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "variation",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"audio_file\": \"string\",\n  \"audio_length_in_seconds\": 2980.2811891188353,\n  \"remaining_character_count\": 8254,\n  \"encoded_audio\": \"string\",\n  \"transcription\": \"string\",\n  \"warning\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "265d25bc-e25c-40e3-a579-ee85c6362c48",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice-changer",
+                    "convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).",
+                        "type": "text/plain"
+                      },
+                      "key": "voice_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying the duration (in seconds) for the generated audio. If the value is 0, this parameter will be ignored. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "audio_duration",
+                      "value": "<double>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values: STEREO, MONO",
+                        "type": "text/plain"
+                      },
+                      "key": "channel_type",
+                      "value": "MONO",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to receive audio in response as a Base64 encoded string along with a url.",
+                        "type": "text/plain"
+                      },
+                      "key": "encode_output_as_base64",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The file to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Format of the generated audio file. Valid values: MP3, WAV, FLAC, ALAW, ULAW",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "WAV",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively. Only available in the Gen2 model.\nValid values: \"en-US\", \"en-UK\", \"es-ES\", etc.\n\nUse the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.",
+                        "type": "text/plain"
+                      },
+                      "key": "multi_native_locale",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pitch of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "pitch",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "A JSON string that defines custom pronunciations for specific words or phrases. Each key is a word or phrase, and its value is an object with `type` and `pronunciation`.\n\nExample 1: '{\"live\": {\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}'\n\nExample 2: '{\"2022\": {\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}'",
+                        "type": "text/plain"
+                      },
+                      "key": "pronunciation_dictionary",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Speed of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "rate",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to retain the original accent of the speaker during voice generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_accent",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Indicates whether to retain the original prosody (intonation, rhythm, and stress) of the input voice in the generated output.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_prosody",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to include a textual transcription of the generated audio in the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "return_transcription",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values are 8000, 24000, 44100, 48000",
+                        "type": "text/plain"
+                      },
+                      "key": "sample_rate",
+                      "value": "44100",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The voice style to be used for voiceover generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "style",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying a transcription of the audio clip, which will then be used as input for the voice changer",
+                        "type": "text/plain"
+                      },
+                      "key": "transcription",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "variation",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6cf06f63-3092-43e0-bf45-6f41fddc62a2",
+              "name": "Expired subscription or character limit exhausted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice-changer",
+                    "convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).",
+                        "type": "text/plain"
+                      },
+                      "key": "voice_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying the duration (in seconds) for the generated audio. If the value is 0, this parameter will be ignored. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "audio_duration",
+                      "value": "<double>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values: STEREO, MONO",
+                        "type": "text/plain"
+                      },
+                      "key": "channel_type",
+                      "value": "MONO",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to receive audio in response as a Base64 encoded string along with a url.",
+                        "type": "text/plain"
+                      },
+                      "key": "encode_output_as_base64",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The file to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Format of the generated audio file. Valid values: MP3, WAV, FLAC, ALAW, ULAW",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "WAV",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively. Only available in the Gen2 model.\nValid values: \"en-US\", \"en-UK\", \"es-ES\", etc.\n\nUse the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.",
+                        "type": "text/plain"
+                      },
+                      "key": "multi_native_locale",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pitch of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "pitch",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "A JSON string that defines custom pronunciations for specific words or phrases. Each key is a word or phrase, and its value is an object with `type` and `pronunciation`.\n\nExample 1: '{\"live\": {\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}'\n\nExample 2: '{\"2022\": {\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}'",
+                        "type": "text/plain"
+                      },
+                      "key": "pronunciation_dictionary",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Speed of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "rate",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to retain the original accent of the speaker during voice generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_accent",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Indicates whether to retain the original prosody (intonation, rhythm, and stress) of the input voice in the generated output.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_prosody",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to include a textual transcription of the generated audio in the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "return_transcription",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values are 8000, 24000, 44100, 48000",
+                        "type": "text/plain"
+                      },
+                      "key": "sample_rate",
+                      "value": "44100",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The voice style to be used for voiceover generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "style",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying a transcription of the audio clip, which will then be used as input for the voice changer",
+                        "type": "text/plain"
+                      },
+                      "key": "transcription",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "variation",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b4baac8-dbca-4a92-8be4-fdaecd9a0f93",
+              "name": "Invalid or expired token/api-key provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice-changer",
+                    "convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).",
+                        "type": "text/plain"
+                      },
+                      "key": "voice_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying the duration (in seconds) for the generated audio. If the value is 0, this parameter will be ignored. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "audio_duration",
+                      "value": "<double>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values: STEREO, MONO",
+                        "type": "text/plain"
+                      },
+                      "key": "channel_type",
+                      "value": "MONO",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to receive audio in response as a Base64 encoded string along with a url.",
+                        "type": "text/plain"
+                      },
+                      "key": "encode_output_as_base64",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The file to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Format of the generated audio file. Valid values: MP3, WAV, FLAC, ALAW, ULAW",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "WAV",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively. Only available in the Gen2 model.\nValid values: \"en-US\", \"en-UK\", \"es-ES\", etc.\n\nUse the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.",
+                        "type": "text/plain"
+                      },
+                      "key": "multi_native_locale",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pitch of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "pitch",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "A JSON string that defines custom pronunciations for specific words or phrases. Each key is a word or phrase, and its value is an object with `type` and `pronunciation`.\n\nExample 1: '{\"live\": {\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}'\n\nExample 2: '{\"2022\": {\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}'",
+                        "type": "text/plain"
+                      },
+                      "key": "pronunciation_dictionary",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Speed of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "rate",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to retain the original accent of the speaker during voice generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_accent",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Indicates whether to retain the original prosody (intonation, rhythm, and stress) of the input voice in the generated output.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_prosody",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to include a textual transcription of the generated audio in the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "return_transcription",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values are 8000, 24000, 44100, 48000",
+                        "type": "text/plain"
+                      },
+                      "key": "sample_rate",
+                      "value": "44100",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The voice style to be used for voiceover generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "style",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying a transcription of the audio clip, which will then be used as input for the voice changer",
+                        "type": "text/plain"
+                      },
+                      "key": "transcription",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "variation",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43d007bf-6c00-4279-b694-58f3a2c67c58",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice-changer",
+                    "convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).",
+                        "type": "text/plain"
+                      },
+                      "key": "voice_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying the duration (in seconds) for the generated audio. If the value is 0, this parameter will be ignored. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "audio_duration",
+                      "value": "<double>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values: STEREO, MONO",
+                        "type": "text/plain"
+                      },
+                      "key": "channel_type",
+                      "value": "MONO",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to receive audio in response as a Base64 encoded string along with a url.",
+                        "type": "text/plain"
+                      },
+                      "key": "encode_output_as_base64",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The file to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Format of the generated audio file. Valid values: MP3, WAV, FLAC, ALAW, ULAW",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "WAV",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively. Only available in the Gen2 model.\nValid values: \"en-US\", \"en-UK\", \"es-ES\", etc.\n\nUse the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.",
+                        "type": "text/plain"
+                      },
+                      "key": "multi_native_locale",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pitch of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "pitch",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "A JSON string that defines custom pronunciations for specific words or phrases. Each key is a word or phrase, and its value is an object with `type` and `pronunciation`.\n\nExample 1: '{\"live\": {\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}'\n\nExample 2: '{\"2022\": {\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}'",
+                        "type": "text/plain"
+                      },
+                      "key": "pronunciation_dictionary",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Speed of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "rate",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to retain the original accent of the speaker during voice generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_accent",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Indicates whether to retain the original prosody (intonation, rhythm, and stress) of the input voice in the generated output.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_prosody",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to include a textual transcription of the generated audio in the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "return_transcription",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values are 8000, 24000, 44100, 48000",
+                        "type": "text/plain"
+                      },
+                      "key": "sample_rate",
+                      "value": "44100",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The voice style to be used for voiceover generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "style",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying a transcription of the audio clip, which will then be used as input for the voice changer",
+                        "type": "text/plain"
+                      },
+                      "key": "transcription",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "variation",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4f88e53-f1b0-4646-a50c-c2b103d9bb59",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voice-changer",
+                    "convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).",
+                        "type": "text/plain"
+                      },
+                      "key": "voice_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying the duration (in seconds) for the generated audio. If the value is 0, this parameter will be ignored. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "audio_duration",
+                      "value": "<double>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values: STEREO, MONO",
+                        "type": "text/plain"
+                      },
+                      "key": "channel_type",
+                      "value": "MONO",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to receive audio in response as a Base64 encoded string along with a url.",
+                        "type": "text/plain"
+                      },
+                      "key": "encode_output_as_base64",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The file to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file_url",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Format of the generated audio file. Valid values: MP3, WAV, FLAC, ALAW, ULAW",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "WAV",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively. Only available in the Gen2 model.\nValid values: \"en-US\", \"en-UK\", \"es-ES\", etc.\n\nUse the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.",
+                        "type": "text/plain"
+                      },
+                      "key": "multi_native_locale",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Pitch of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "pitch",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "A JSON string that defines custom pronunciations for specific words or phrases. Each key is a word or phrase, and its value is an object with `type` and `pronunciation`.\n\nExample 1: '{\"live\": {\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}'\n\nExample 2: '{\"2022\": {\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}'",
+                        "type": "text/plain"
+                      },
+                      "key": "pronunciation_dictionary",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Speed of the voiceover",
+                        "type": "text/plain"
+                      },
+                      "key": "rate",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to retain the original accent of the speaker during voice generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_accent",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Indicates whether to retain the original prosody (intonation, rhythm, and stress) of the input voice in the generated output.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_prosody",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Set to true to include a textual transcription of the generated audio in the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "return_transcription",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Valid values are 8000, 24000, 44100, 48000",
+                        "type": "text/plain"
+                      },
+                      "key": "sample_rate",
+                      "value": "44100",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "The voice style to be used for voiceover generation.",
+                        "type": "text/plain"
+                      },
+                      "key": "style",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "This parameter allows specifying a transcription of the audio clip, which will then be used as input for the voice changer",
+                        "type": "text/plain"
+                      },
+                      "key": "transcription",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.",
+                        "type": "text/plain"
+                      },
+                      "key": "variation",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.murf.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "27315c8b-4433-47be-b214-882daea8a5a5",
+    "name": "API Reference subpackage_auth subpackage_voiceChanger API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

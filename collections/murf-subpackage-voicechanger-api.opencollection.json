@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "API Reference subpackage_auth subpackage_voiceChanger API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "subpackage_voiceChanger",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Voice Changer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.murf.ai/v1/voice-changer/convert",
+            "headers": [
+              {
+                "name": "api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "audio_duration",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "channel_type",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "encode_output_as_base64",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "format",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "multi_native_locale",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "pitch",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "pronunciation_dictionary",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "rate",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "retain_accent",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "retain_prosody",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "return_transcription",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "sample_rate",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "style",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "transcription",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "variation",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "voice_id",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Returns a url to the generated audio file along with other associated properties."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

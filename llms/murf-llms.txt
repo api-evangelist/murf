@@ -1,0 +1,64 @@
+# Murf AI
+
+> Murf Studio is a cloud-based realistic text-to-speech platform that allows users to generate lifelike AI-based voiceovers for multiple use cases.
+
+**Platform Solutions**
+
+- [AI Voice Generation](https://murf.ai/): Create realistic AI voices for any project using Murf's AI voice generation technology.
+- [AI Text-to-Speech](https://murf.ai/text-to-speech): Convert text into natural-sounding speech using cutting-edge AI-powered technology..
+- [AI Voice Cloning](https://murf.ai/voice-cloning): Create custom AI voice clones that mimic human emotions for various applications like advertising and content creation.
+- [AI Voice Changer](https://murf.ai/voice-changer): Modify and transform voices in real-time with advanced AI-powered voice changing.
+- [Text-to-Speech API](https://murf.ai/api): Facilitates integration of Murf's text-to-speech capabilities into applications with diverse voice options.
+- [Audio to Text Conversion](https://murf.ai/audio-to-text-converter): Convert audio files into accurate, editable text with powerful AI transcription.
+- [Voice to Text Conversion](https://murf.ai/speech-to-text): Transform spoken words into text with high-accuracy speech recognition.
+- [Voice Over Video Creation](https://murf.ai/voice-over-video): Create engaging voiceovers for videos using AI-generated voices in various languages.
+- [Online Voice Editing Tool](https://murf.ai/voice-editing): Murf offers an intuitive online platform for editing voiceovers by converting audio recordings into editable text format.
+- [Online Audio Translation Tool](https://murf.ai/tools/audio-translator): Murf offers free online audio to audio translation across 10+ languages and 200+ AI voices..
+
+**Use Cases**
+
+- [AI Voiceovers for Social Media](https://murf.ai/voiceover/social-media-videos): Create engaging AI voiceovers for social media videos in multiple languages.
+- [AI Voiceovers for Audiobook](https://murf.ai/voiceover/audiobooks): Create professional-quality audiobooks quickly using AI voice technology.
+- [AI Voiceovers for YouTube](https://murf.ai/voiceover/youtube-videos): Create engaging voiceovers for YouTube videos using AI technology.
+- [AI Voiceovers for Games](https://murf.ai/voiceover/video-game): Create customizable AI voiceovers for video games, enhancing character emotions and streamlining production processes.
+- [AI Voiceover for Documentaries](https://murf.ai/voiceover/documentary): Generate customizable voiceovers for documentaries using AI technology to enhance storytelling and improve efficiency.
+- [AI Voiceovers for Podcasts](https://murf.ai/voiceover/podcast): Create high-quality AI voiceovers for podcasts using customizable features and a wide range of voice options.
+- [AI Voiceovers for Animation](https://murf.ai/voiceover/animation): Create engaging voiceovers for animated content efficiently using AI voices.
+- [AI Voiceovers for Spotify Ads](https://murf.ai/voiceover/spotify-ads): Create engaging voiceovers for Spotify ads easily with Murf's AI-powered tools and features.
+- [AI Voiceovers for E-Learning](https://murf.ai/voiceover/elearning): Create engaging voiceovers for e-learning content using AI voices in multiple languages.
+- [AI Voiceovers for Explainer Videos](https://murf.ai/voiceover/explainer-videos): Create AI-generated voiceovers for engaging explainer videos effortlessly.
+- [AI Voiceovers for Advertising](https://murf.ai/voiceover/advertising): Create professional AI voiceovers for advertising to enhance engagement and brand storytelling.
+- [AI Voiceover for Demos](https://murf.ai/voiceover/product-demos): Provide tools for creating engaging voiceovers for product demos using AI technology.
+- [AI Voiceovers for Presentations](https://murf.ai/voiceover/presentations): Create engaging voiceovers for presentations using AI technology to enhance learning and communication.
+- [AI Voiceovers for L&D](https://murf.ai/voiceover/learning-and-development-videos): Create engaging voiceovers for learning and development videos using AI technology.
+- [AI Voiceover for Training](https://murf.ai/voiceover/training-videos): Create engaging voiceovers for e-learning and training videos using AI technology, improving understanding and accessibility.
+
+**Integrations**
+
+- [Voice Over Google Slides](https://murf.ai/integrations/google-slides): Integrate Murf's AI-generated voiceovers into Google Slides for seamless presentations.
+- [Enhance E-Learning Audio](https://murf.ai/integrations/adobe-captivate): Integrate Murf's realistic voices with Adobe Captivate for enhanced e-learning audio experiences.
+- [Murf Voices Integration](https://murf.ai/integrations/adobe-audition): Integrate Murf voices with Adobe Audition for enhanced audio production in e-learning and other projects.
+- [Integration with Articulate 360](https://murf.ai/integrations/articulate-360): Integrate Murf's voiceovers into Articulate Rise 360 for enhanced learning experiences.
+
+**Resources**
+- [Blog](https://murf.ai/blog): Articles on AI tools, AI Voice, Text to Speech and AI dubbing.
+
+**Company Information**
+
+- [Terms of Service](https://murf.ai/resources/terms_of_service/): Establishes the terms governing the use of Murf's services and user responsibilities.
+- [Privacy Policy](https://murf.ai/resources/privacy_policy/): To inform users about how their personal information is collected, used, and protected.
+- [Murf Security Access](https://murf.ai/security): Facilitate access requests and inform about security protocols for Murf's services.
+- [Contact Support](https://murf.ai/contact): Provide contact information and support options for customers and partners of Murf AI.
+- [Ethical AI Practices](https://murf.ai/ethical-ai): Promoting ethical AI practices in voice technology through collaboration with voice artists and commitment to fair representation.
+- [Murf AI Pricing Plans](https://murf.ai/pricing): Displays information about pricing plans for Murf AI services.
+
+**Optional Resources**
+
+- [AI Voiceover Solutions for Enterprises](https://murf.ai/enterprise): Promote AI-driven voiceover solutions for enterprises that enhance content production and collaboration securely and efficiently.
+- [Startup Incubator Program](https://murf.ai/startup-program): Supports early-stage startups with free credits for utilizing AI voice and text-to-speech technology.
+- [Advanced Text-to-Speech Solution](https://murf.ai/text-to-speech-gen-2): Showcase advanced text-to-speech technology for customizable and realistic voiceovers to enhance creative workflows.
+- [Murf AI Studio Login](https://murf.ai/studio/login): Login page for the Murf AI studio application.
+- [Murf Affiliate Program](https://murf.ai/partner-with-us/affiliate): Promote Murf's affiliate program for earning commissions on referrals of their AI voiceover tool.
+- [Sell Voice Data](https://murf.ai/partner-with-us/sell-voice-data): Recruit individuals and agencies to submit high-quality voice data for training AI models.
+- [AI Voice Tools Resources](https://murf.ai/resources/): The site offers resources and articles about AI voice enhancement tools and text-to-speech applications.
+- [Murf Speech Synthesis API](https://murf.ai/api/reference): Guide for integrating the Murf Speech Synthesis API for generating voiceovers from text.

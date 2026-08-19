@@ -1,0 +1,1082 @@
+{
+  "item": [
+    {
+      "id": "f56fd98e-6409-4bcc-9b50-c3f272802912",
+      "name": "subpackage_textToSpeech",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e3431474-6667-4815-8a40-d558a6c06f0e",
+          "name": "Stream Speech",
+          "request": {
+            "name": "Stream Speech",
+            "description": {
+              "content": "Synthesize speech with ultra-low latency over a streaming connection.\nChoose the `Base URL` from the URL dropdown (Global URL or a pinned Region)\n\n**Note**: Global URL auto-routes to the nearest region.\n| Region         | URL                                       | Default Concurrency |\n| ------------------------- | ---------------------------------------------- | -------------------- |\n| Global (Routes to the nearest server) | `https://global.api.murf.ai/v1/speech/stream`     | Region specific concurrency |\n| US-East                   | `https://us-east.api.murf.ai/v1/speech/stream`    | 15 |\n| US-West                   | `https://us-west.api.murf.ai/v1/speech/stream`    | 2 |\n| India                     | `https://in.api.murf.ai/v1/speech/stream`         | 2 |\n| Canada                    | `https://ca.api.murf.ai/v1/speech/stream`         | 2 |\n| South Korea               | `https://kr.api.murf.ai/v1/speech/stream`         | 2 |\n| UAE                       | `https://me.api.murf.ai/v1/speech/stream`         | 2 |\n| Japan                     | `https://jp.api.murf.ai/v1/speech/stream`         | 2 |\n| Australia                 | `https://au.api.murf.ai/v1/speech/stream`         | 2 |\n| EU (Central)              | `https://eu-central.api.murf.ai/v1/speech/stream` | 2 |\n| UK                        | `https://uk.api.murf.ai/v1/speech/stream`         | 2 |\n| South America (São Paulo) | `https://sa-east.api.murf.ai/v1/speech/stream`    | 2 |\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "speech",
+                "stream"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "api-key",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"model\": \"<string>\",\n  \"channelType\": \"MONO\",\n  \"format\": \"WAV\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"key_1\": {\n      \"pronunciation\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 24000,\n  \"style\": \"<string>\",\n  \"variation\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "99f2ee93-12a3-4d36-b268-5e15e42340f8",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"model\": \"<string>\",\n  \"channelType\": \"MONO\",\n  \"format\": \"WAV\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 24000,\n  \"style\": \"<string>\",\n  \"variation\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7cb8165-4eb5-4b78-873f-a7199c237fe7",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"model\": \"<string>\",\n  \"channelType\": \"MONO\",\n  \"format\": \"WAV\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 24000,\n  \"style\": \"<string>\",\n  \"variation\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e36e493e-47f1-4d39-992e-18e9840a1f7f",
+              "name": "Expired subscription or character limit exhausted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"model\": \"<string>\",\n  \"channelType\": \"MONO\",\n  \"format\": \"WAV\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 24000,\n  \"style\": \"<string>\",\n  \"variation\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0acedb31-12f2-4ea2-8802-f9b7b2f40dba",
+              "name": "Invalid or expired token/api-key provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"model\": \"<string>\",\n  \"channelType\": \"MONO\",\n  \"format\": \"WAV\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 24000,\n  \"style\": \"<string>\",\n  \"variation\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1255b82d-e9f0-452c-beb0-4d1553d79403",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"model\": \"<string>\",\n  \"channelType\": \"MONO\",\n  \"format\": \"WAV\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 24000,\n  \"style\": \"<string>\",\n  \"variation\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b881a5b-0b1c-4a43-9cb7-f21d0f842566",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"model\": \"<string>\",\n  \"channelType\": \"MONO\",\n  \"format\": \"WAV\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 24000,\n  \"style\": \"<string>\",\n  \"variation\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a0fd3d99-817b-4422-9473-6240ad695c58",
+          "name": "Synthesize Speech",
+          "request": {
+            "name": "Synthesize Speech",
+            "description": {
+              "content": "Returns a url to the generated audio file along with other associated properties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "speech",
+                "generate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "api-key",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"audioDuration\": \"<double>\",\n  \"channelType\": \"MONO\",\n  \"encodeAsBase64\": \"<boolean>\",\n  \"format\": \"WAV\",\n  \"modelVersion\": \"GEN2\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"key_1\": {\n      \"pronunciation\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 44100,\n  \"style\": \"<string>\",\n  \"variation\": 1,\n  \"wordDurationsAsOriginalText\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6a3f61b7-e6b7-4a6c-9fb3-d615a0d90198",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "generate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"audioDuration\": \"<double>\",\n  \"channelType\": \"MONO\",\n  \"encodeAsBase64\": \"<boolean>\",\n  \"format\": \"WAV\",\n  \"modelVersion\": \"GEN2\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_1\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_2\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 44100,\n  \"style\": \"<string>\",\n  \"variation\": 1,\n  \"wordDurationsAsOriginalText\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"audioFile\": \"string\",\n  \"audioLengthInSeconds\": 5622.637513117943,\n  \"remainingCharacterCount\": 5820,\n  \"wordDurations\": [\n    {\n      \"endMs\": 9742,\n      \"pitchScaleMaximum\": 6188.492082007138,\n      \"pitchScaleMinimum\": 268.7454206131001,\n      \"sourceWordIndex\": 3863,\n      \"startMs\": 6563,\n      \"word\": \"string\"\n    },\n    {\n      \"endMs\": 3756,\n      \"pitchScaleMaximum\": 6161.810455075606,\n      \"pitchScaleMinimum\": 6422.8179687601005,\n      \"sourceWordIndex\": 59,\n      \"startMs\": 9633,\n      \"word\": \"string\"\n    }\n  ],\n  \"consumedCharacterCount\": 7426,\n  \"encodedAudio\": \"string\",\n  \"warning\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "31cf8c28-a90a-4cbb-9924-5306be75afc9",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "generate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"audioDuration\": \"<double>\",\n  \"channelType\": \"MONO\",\n  \"encodeAsBase64\": \"<boolean>\",\n  \"format\": \"WAV\",\n  \"modelVersion\": \"GEN2\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_1\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_2\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 44100,\n  \"style\": \"<string>\",\n  \"variation\": 1,\n  \"wordDurationsAsOriginalText\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b204b1c4-fd24-4277-a938-442a5f604325",
+              "name": "Expired subscription or character limit exhausted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "generate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"audioDuration\": \"<double>\",\n  \"channelType\": \"MONO\",\n  \"encodeAsBase64\": \"<boolean>\",\n  \"format\": \"WAV\",\n  \"modelVersion\": \"GEN2\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_1\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_2\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 44100,\n  \"style\": \"<string>\",\n  \"variation\": 1,\n  \"wordDurationsAsOriginalText\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88a74174-1e06-4d24-8277-0b0fa3dfca32",
+              "name": "Invalid or expired token/api-key provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "generate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"audioDuration\": \"<double>\",\n  \"channelType\": \"MONO\",\n  \"encodeAsBase64\": \"<boolean>\",\n  \"format\": \"WAV\",\n  \"modelVersion\": \"GEN2\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_1\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_2\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 44100,\n  \"style\": \"<string>\",\n  \"variation\": 1,\n  \"wordDurationsAsOriginalText\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c8d46c7-c79b-410f-817c-c01218e3aabb",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "generate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"audioDuration\": \"<double>\",\n  \"channelType\": \"MONO\",\n  \"encodeAsBase64\": \"<boolean>\",\n  \"format\": \"WAV\",\n  \"modelVersion\": \"GEN2\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_1\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_2\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 44100,\n  \"style\": \"<string>\",\n  \"variation\": 1,\n  \"wordDurationsAsOriginalText\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47e29c31-d87d-4074-8245-2c8c641bd169",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "generate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"audioDuration\": \"<double>\",\n  \"channelType\": \"MONO\",\n  \"encodeAsBase64\": \"<boolean>\",\n  \"format\": \"WAV\",\n  \"modelVersion\": \"GEN2\",\n  \"multiNativeLocale\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"pitch\": \"<integer>\",\n  \"pronunciationDictionary\": {\n    \"key_0\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_1\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"SAY_AS\"\n    },\n    \"key_2\": {\n      \"pronunciation\": \"string\",\n      \"type\": \"IPA\"\n    }\n  },\n  \"rate\": \"<integer>\",\n  \"sampleRate\": 44100,\n  \"style\": \"<string>\",\n  \"variation\": 1,\n  \"wordDurationsAsOriginalText\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b573eefa-d37d-444d-aec0-38c3294ae50b",
+          "name": "List Voices",
+          "request": {
+            "name": "List Voices",
+            "description": {
+              "content": "Returns a list of available voices for speech synthesis",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "speech",
+                "voices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "model",
+                  "value": "GEN2",
+                  "description": "Valid values: FALCON, GEN2"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "api-key",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "149a214e-2de5-4d61-8f83-2192584e7621",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "model",
+                      "value": "GEN2"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"accent\": \"string\",\n    \"availableStyles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"description\": \"string\",\n    \"displayLanguage\": \"string\",\n    \"displayName\": \"string\",\n    \"gender\": \"Male\",\n    \"locale\": \"string\",\n    \"supportedLocales\": {\n      \"key_0\": {\n        \"availableStyles\": [\n          \"string\",\n          \"string\"\n        ],\n        \"detail\": \"string\"\n      }\n    },\n    \"voiceId\": \"string\"\n  },\n  {\n    \"accent\": \"string\",\n    \"availableStyles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"description\": \"string\",\n    \"displayLanguage\": \"string\",\n    \"displayName\": \"string\",\n    \"gender\": \"Male\",\n    \"locale\": \"string\",\n    \"supportedLocales\": {\n      \"key_0\": {\n        \"availableStyles\": [\n          \"string\",\n          \"string\"\n        ],\n        \"detail\": \"string\"\n      },\n      \"key_1\": {\n        \"availableStyles\": [\n          \"string\",\n          \"string\"\n        ],\n        \"detail\": \"string\"\n      }\n    },\n    \"voiceId\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c261a82e-3a7b-412c-90cc-dd0c71c53801",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "model",
+                      "value": "GEN2"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04b78982-cd9d-461d-bb56-18be41726c39",
+              "name": "Invalid or expired token provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "model",
+                      "value": "GEN2"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ada2484-e2b2-4bad-9ecf-a5f67bef517c",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "model",
+                      "value": "GEN2"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d1ca740-c151-4f25-a4a4-66dad8973cb4",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "speech",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "model",
+                      "value": "GEN2"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "api-key",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.murf.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6007d0cb-397b-4526-a217-0759fb6494e2",
+    "name": "API Reference subpackage_auth subpackage_textToSpeech API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
