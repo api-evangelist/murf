@@ -21,6 +21,14 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/murf.png
 tags:
+  - Artificial Intelligence
+  - Voice
+  - TTS
+  - Voiceover
+  - Dubbing
+  - Audio
+  - Real-Time
+tags_raw:
   - AI
   - Voice
   - TTS
@@ -37,7 +45,8 @@ apis:
   description: The subpackage_auth API from Murf — 1 operation(s) for subpackage_auth.
   humanURL: https://murf.ai/api/docs/introduction/overview
   baseURL: https://api.murf.ai
-  tags:
+  tags: []
+  tags_raw:
   - subpackage_auth
   properties:
   - type: OpenAPI
@@ -112,7 +121,8 @@ apis:
   description: The subpackage_text API from Murf — 1 operation(s) for subpackage_text.
   humanURL: https://murf.ai/api/docs/introduction/overview
   baseURL: https://api.murf.ai
-  tags:
+  tags: []
+  tags_raw:
   - subpackage_text
   properties:
   - type: OpenAPI
