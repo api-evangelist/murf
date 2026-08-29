@@ -1,0 +1,34 @@
+slug: murf
+provider: Murf
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: subpackage_dubbing.subpackage_dubbing/jobs
+  spec_file: murf-subpackage-dubbing-subpackage-dubbing-jobs-api-openapi.yml
+  capability_id: BC-3700.60
+  capability_id_l1: BC-3700
+  capability_name: Localisation & Versioning Management
+  confidence: 0.8
+  evidence: POST /v1/murfdub/jobs/create; schemas DubJobStatusResponse, ApiJobResponseDubbingType
+  reason: Operations create and track AI dubbing jobs over source media, which is dubbing/versioning of
+    content — Localisation & Versioning Management. Judged on the murfdub paths and DubJobStatus schemas,
+    not the split title.
+- tag: subpackage_dubbing.subpackage_dubbing/projects
+  spec_file: murf-subpackage-dubbing-subpackage-dubbing-projects-api-openapi.yml
+  capability_id: BC-3700.60
+  capability_id_l1: BC-3700
+  capability_name: Localisation & Versioning Management
+  confidence: 0.7
+  evidence: POST /v1/murfdub/projects/create; ApiProjectResponseDubbingType
+  reason: Project containers for dubbing work (dubbing type on the project schema) — organisational layer
+    of the dubbing/versioning workflow. Some risk this is generic project plumbing, so moderate confidence.

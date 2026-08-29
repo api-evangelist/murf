@@ -184,6 +184,9 @@ apis:
   - type: GitHub
     url: https://github.com/murf-ai/murf-cookbook
 common:
+  - type: CapabilityMap
+    url: capabilities/murf-capability-edges.yml
+    name: Murf Business Capability Map
   - type: AgenticAccess
     url: agentic-access/murf-agentic-access.yml
   - type: TrustCenter
