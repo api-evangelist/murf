@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: API Reference subpackage_auth subpackage_textToSpeech API
+  title: Reference Subpackage Text To Speech API
   version: 1.0.0
 servers:
 - url: https://api.murf.ai
@@ -30,35 +30,33 @@ paths:
 
         **Note**: Global URL auto-routes to the nearest region.
 
-        | Region         | URL                                       | Default Concurrency |
+        | Region | URL | Default Concurrency |
 
         | ------------------------- | ---------------------------------------------- | -------------------- |
 
-        | Global (Routes to the nearest server) | `https://global.api.murf.ai/v1/speech/stream`     | Region specific concurrency |
+        | Global (Routes to the nearest server) | `https://global.api.murf.ai/v1/speech/stream` | Region specific concurrency |
 
-        | US-East                   | `https://us-east.api.murf.ai/v1/speech/stream`    | 15 |
+        | US-East | `https://us-east.api.murf.ai/v1/speech/stream` | 15 |
 
-        | US-West                   | `https://us-west.api.murf.ai/v1/speech/stream`    | 2 |
+        | US-West | `https://us-west.api.murf.ai/v1/speech/stream` | 2 |
 
-        | India                     | `https://in.api.murf.ai/v1/speech/stream`         | 2 |
+        | India | `https://in.api.murf.ai/v1/speech/stream` | 2 |
 
-        | Canada                    | `https://ca.api.murf.ai/v1/speech/stream`         | 2 |
+        | Canada | `https://ca.api.murf.ai/v1/speech/stream` | 2 |
 
-        | South Korea               | `https://kr.api.murf.ai/v1/speech/stream`         | 2 |
+        | South Korea | `https://kr.api.murf.ai/v1/speech/stream` | 2 |
 
-        | UAE                       | `https://me.api.murf.ai/v1/speech/stream`         | 2 |
+        | UAE | `https://me.api.murf.ai/v1/speech/stream` | 2 |
 
-        | Japan                     | `https://jp.api.murf.ai/v1/speech/stream`         | 2 |
+        | Japan | `https://jp.api.murf.ai/v1/speech/stream` | 2 |
 
-        | Australia                 | `https://au.api.murf.ai/v1/speech/stream`         | 2 |
+        | Australia | `https://au.api.murf.ai/v1/speech/stream` | 2 |
 
-        | EU (Central)              | `https://eu-central.api.murf.ai/v1/speech/stream` | 2 |
+        | EU (Central) | `https://eu-central.api.murf.ai/v1/speech/stream` | 2 |
 
-        | UK                        | `https://uk.api.murf.ai/v1/speech/stream`         | 2 |
+        | UK | `https://uk.api.murf.ai/v1/speech/stream` | 2 |
 
-        | South America (São Paulo) | `https://sa-east.api.murf.ai/v1/speech/stream`    | 2 |
-
-        '
+        | South America (São Paulo) | `https://sa-east.api.murf.ai/v1/speech/stream` | 2 |'
       tags:
       - subpackage_textToSpeech
       parameters:
@@ -224,106 +222,6 @@ paths:
                 description: Any type
 components:
   schemas:
-    PronunciationDetailType:
-      type: string
-      enum:
-      - IPA
-      - SAY_AS
-      title: PronunciationDetailType
-    GenerateSpeechStreamingRequest:
-      type: object
-      properties:
-        model:
-          type: string
-          description: 'The model to use for audio output. Defaults to FALCON for all the regions except US-East. Valid values: FALCON, GEN2'
-        channelType:
-          type: string
-          default: MONO
-          description: 'Valid values: STEREO, MONO'
-        format:
-          type: string
-          default: WAV
-          description: 'Format of the generated audio file.Valid values: MP3, FLAC, WAV, ALAW, ULAW, OGG, PCM'
-        multiNativeLocale:
-          type: string
-          description: 'This field is superseded by `locale` field. Please migrate to `locale` field to ensure compatibility with future API versions.
-
-
-            Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively.
-
-            Valid values: "en-US", "en-UK", "es-ES", etc. Use the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.'
-        locale:
-          type: string
-          description: 'Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively.
-
-            Valid values: "en-US", "en-UK", "es-ES", etc. Use the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.'
-        pitch:
-          type: integer
-          description: Pitch of the voiceover
-        pronunciationDictionary:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/PronunciationDetail'
-          description: "An object used to define custom pronunciations. \n\n Example 1: {\"live\":{\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}. \n\n Example 2: {\"2022\":{\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}"
-        rate:
-          type: integer
-          description: Speed of the voiceover
-        sampleRate:
-          type: number
-          format: double
-          default: 24000
-          description: Valid values are 8000, 16000, 24000, 44100, 48000. Defaults to 24000 for Falcon model and 44100 for Gen2 model.
-        style:
-          type: string
-          description: The voice style to be used for voiceover generation.
-        text:
-          type: string
-          description: The text that is to be synthesised. e.g. 'Hello there [pause 1s] friend'
-        variation:
-          type: integer
-          default: 1
-          description: Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.
-        voiceId:
-          type: string
-          description: Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
-      required:
-      - text
-      - voiceId
-      title: GenerateSpeechStreamingRequest
-    ApiVoice:
-      type: object
-      properties:
-        accent:
-          type: string
-          description: This field has been deprecated. Please refer to 'supportedLocales.detail' instead.
-        availableStyles:
-          type: array
-          items:
-            type: string
-          description: This field has been deprecated. Please refer to 'supportedLocales.availableStyles' instead.
-        description:
-          type: string
-        displayLanguage:
-          type: string
-          description: This field has been deprecated. Please refer to 'supportedLocales.detail' instead.
-        displayName:
-          type: string
-        gender:
-          $ref: '#/components/schemas/ApiVoiceGender'
-        locale:
-          type: string
-        supportedLocales:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/StyleDetails'
-        voiceId:
-          type: string
-      title: ApiVoice
-    text_to_speech_stream_Response_200:
-      type: object
-      properties: {}
-      description: Empty response body
-      title: text_to_speech_stream_Response_200
     GenerateSpeechRequestModelVersion:
       type: string
       enum:
@@ -331,32 +229,6 @@ components:
       default: GEN2
       description: 'Valid values: GEN2. Audio will be generated using the new and advanced GEN2 model. Outputs from GEN2 sound more natural and high-quality compared to earlier models.'
       title: GenerateSpeechRequestModelVersion
-    ApiVoiceGender:
-      type: string
-      enum:
-      - Male
-      - Female
-      - NonBinary
-      title: ApiVoiceGender
-    PronunciationDetail:
-      type: object
-      properties:
-        pronunciation:
-          type: string
-        type:
-          $ref: '#/components/schemas/PronunciationDetailType'
-      description: "An object used to define custom pronunciations. \n\n Example 1: {\"live\":{\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}. \n\n Example 2: {\"2022\":{\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}"
-      title: PronunciationDetail
-    StyleDetails:
-      type: object
-      properties:
-        availableStyles:
-          type: array
-          items:
-            type: string
-        detail:
-          type: string
-      title: StyleDetails
     WordDurationResponse:
       type: object
       properties:
@@ -378,37 +250,6 @@ components:
         word:
           type: string
       title: WordDurationResponse
-    GenerateSpeechResponse:
-      type: object
-      properties:
-        audioFile:
-          type: string
-          format: url
-        audioLengthInSeconds:
-          type: number
-          format: double
-        consumedCharacterCount:
-          type: integer
-          format: int64
-          description: Number of characters consumed so far in the current billing cycle.
-        encodedAudio:
-          type: string
-        remainingCharacterCount:
-          type: integer
-          format: int64
-          description: Remaining number of characters available for synthesis in the current billing cycle.
-        warning:
-          type: string
-        wordDurations:
-          type: array
-          items:
-            $ref: '#/components/schemas/WordDurationResponse'
-      required:
-      - audioFile
-      - audioLengthInSeconds
-      - remainingCharacterCount
-      - wordDurations
-      title: GenerateSpeechResponse
     GenerateSpeechRequest:
       type: object
       properties:
@@ -480,3 +321,160 @@ components:
       - text
       - voiceId
       title: GenerateSpeechRequest
+    ApiVoice:
+      type: object
+      properties:
+        accent:
+          type: string
+          description: This field has been deprecated. Please refer to 'supportedLocales.detail' instead.
+        availableStyles:
+          type: array
+          items:
+            type: string
+          description: This field has been deprecated. Please refer to 'supportedLocales.availableStyles' instead.
+        description:
+          type: string
+        displayLanguage:
+          type: string
+          description: This field has been deprecated. Please refer to 'supportedLocales.detail' instead.
+        displayName:
+          type: string
+        gender:
+          $ref: '#/components/schemas/ApiVoiceGender'
+        locale:
+          type: string
+        supportedLocales:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/StyleDetails'
+        voiceId:
+          type: string
+      title: ApiVoice
+    GenerateSpeechStreamingRequest:
+      type: object
+      properties:
+        model:
+          type: string
+          description: 'The model to use for audio output. Defaults to FALCON for all the regions except US-East. Valid values: FALCON, GEN2'
+        channelType:
+          type: string
+          default: MONO
+          description: 'Valid values: STEREO, MONO'
+        format:
+          type: string
+          default: WAV
+          description: 'Format of the generated audio file.Valid values: MP3, FLAC, WAV, ALAW, ULAW, OGG, PCM'
+        multiNativeLocale:
+          type: string
+          description: 'This field is superseded by `locale` field. Please migrate to `locale` field to ensure compatibility with future API versions.
+
+
+            Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively.
+
+            Valid values: "en-US", "en-UK", "es-ES", etc. Use the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.'
+        locale:
+          type: string
+          description: 'Specifies the language for the generated audio, enabling a voice to speak in multiple languages natively.
+
+            Valid values: "en-US", "en-UK", "es-ES", etc. Use the GET /v1/speech/voices endpoint to retrieve the list of available voices and languages.'
+        pitch:
+          type: integer
+          description: Pitch of the voiceover
+        pronunciationDictionary:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PronunciationDetail'
+          description: "An object used to define custom pronunciations. \n\n Example 1: {\"live\":{\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}. \n\n Example 2: {\"2022\":{\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}"
+        rate:
+          type: integer
+          description: Speed of the voiceover
+        sampleRate:
+          type: number
+          format: double
+          default: 24000
+          description: Valid values are 8000, 16000, 24000, 44100, 48000. Defaults to 24000 for Falcon model and 44100 for Gen2 model.
+        style:
+          type: string
+          description: The voice style to be used for voiceover generation.
+        text:
+          type: string
+          description: The text that is to be synthesised. e.g. 'Hello there [pause 1s] friend'
+        variation:
+          type: integer
+          default: 1
+          description: Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.
+        voiceId:
+          type: string
+          description: Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
+      required:
+      - text
+      - voiceId
+      title: GenerateSpeechStreamingRequest
+    StyleDetails:
+      type: object
+      properties:
+        availableStyles:
+          type: array
+          items:
+            type: string
+        detail:
+          type: string
+      title: StyleDetails
+    GenerateSpeechResponse:
+      type: object
+      properties:
+        audioFile:
+          type: string
+          format: url
+        audioLengthInSeconds:
+          type: number
+          format: double
+        consumedCharacterCount:
+          type: integer
+          format: int64
+          description: Number of characters consumed so far in the current billing cycle.
+        encodedAudio:
+          type: string
+        remainingCharacterCount:
+          type: integer
+          format: int64
+          description: Remaining number of characters available for synthesis in the current billing cycle.
+        warning:
+          type: string
+        wordDurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordDurationResponse'
+      required:
+      - audioFile
+      - audioLengthInSeconds
+      - remainingCharacterCount
+      - wordDurations
+      title: GenerateSpeechResponse
+    text_to_speech_stream_Response_200:
+      type: object
+      properties: {}
+      description: Empty response body
+      title: text_to_speech_stream_Response_200
+    ApiVoiceGender:
+      type: string
+      enum:
+      - Male
+      - Female
+      - NonBinary
+      title: ApiVoiceGender
+    PronunciationDetailType:
+      type: string
+      enum:
+      - IPA
+      - SAY_AS
+      title: PronunciationDetailType
+    PronunciationDetail:
+      type: object
+      properties:
+        pronunciation:
+          type: string
+        type:
+          $ref: '#/components/schemas/PronunciationDetailType'
+      description: "An object used to define custom pronunciations. \n\n Example 1: {\"live\":{\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}. \n\n Example 2: {\"2022\":{\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}"
+      title: PronunciationDetail

@@ -1,0 +1,33 @@
+# Front Door AI Index — murf — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: murf
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: murf.ai
+  final_host: murf.ai
+  ownership: own
+  owner: murf
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 81
+  host_score: 81
+  density: 27.67
+  words: 2927
+  tiers:
+    agentic: 2
+    core: 77
+    model: 2
+  ambiguous: 19
+  top_terms:
+    AI: 74
+    agent: 17
+    OpenAI: 2
+    neural network: 2
+    AI agent: 1
+    artificial intelligence: 1
+    automation: 1
+    intelligence: 1
+    virtual assistant: 1
