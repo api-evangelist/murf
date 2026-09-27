@@ -75,6 +75,40 @@ paths:
               $ref: '#/components/schemas/MurfApiTranslationRequest'
 components:
   schemas:
+    Metadata:
+      type: object
+      properties:
+        character_count:
+          $ref: '#/components/schemas/CharacterCount'
+        credits_used:
+          type: number
+          format: double
+        target_language:
+          type: string
+      title: Metadata
+    MurfApiTranslationRequest:
+      type: object
+      properties:
+        targetLanguage:
+          type: string
+          description: The language code for the target translation
+        texts:
+          type: array
+          items:
+            type: string
+          description: List of texts to translate
+      required:
+      - targetLanguage
+      - texts
+      title: MurfApiTranslationRequest
+    Translation:
+      type: object
+      properties:
+        source_text:
+          type: string
+        translated_text:
+          type: string
+      title: Translation
     CharacterCount:
       type: object
       properties:
@@ -93,37 +127,3 @@ components:
           items:
             $ref: '#/components/schemas/Translation'
       title: MurfApiTranslationResponse
-    MurfApiTranslationRequest:
-      type: object
-      properties:
-        targetLanguage:
-          type: string
-          description: The language code for the target translation
-        texts:
-          type: array
-          items:
-            type: string
-          description: List of texts to translate
-      required:
-      - targetLanguage
-      - texts
-      title: MurfApiTranslationRequest
-    Metadata:
-      type: object
-      properties:
-        character_count:
-          $ref: '#/components/schemas/CharacterCount'
-        credits_used:
-          type: number
-          format: double
-        target_language:
-          type: string
-      title: Metadata
-    Translation:
-      type: object
-      properties:
-        source_text:
-          type: string
-        translated_text:
-          type: string
-      title: Translation

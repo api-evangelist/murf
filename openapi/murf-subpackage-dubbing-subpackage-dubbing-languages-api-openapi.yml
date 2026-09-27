@@ -113,24 +113,6 @@ paths:
                 description: Any type
 components:
   schemas:
-    SourceLocaleResponse:
-      type: object
-      properties:
-        locale:
-          type: string
-        language:
-          type: string
-      required:
-      - locale
-      - language
-      title: SourceLocaleResponse
-    LocaleResponseSupportsItems:
-      type: string
-      enum:
-      - AUTOMATED
-      - QA
-      description: Dubbing Type supported by locale
-      title: LocaleResponseSupportsItems
     LocaleResponse:
       type: object
       properties:
@@ -148,3 +130,21 @@ components:
       - language
       - supports
       title: LocaleResponse
+    LocaleResponseSupportsItems:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      description: Dubbing Type supported by locale
+      title: LocaleResponseSupportsItems
+    SourceLocaleResponse:
+      type: object
+      properties:
+        locale:
+          type: string
+        language:
+          type: string
+      required:
+      - locale
+      - language
+      title: SourceLocaleResponse
