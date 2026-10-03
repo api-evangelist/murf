@@ -215,20 +215,6 @@ paths:
                 description: Any type
 components:
   schemas:
-    DubApiDetailResponse:
-      type: object
-      properties:
-        locale:
-          type: string
-        status:
-          type: string
-        error_message:
-          type: string
-        download_url:
-          type: string
-        download_srt_url:
-          type: string
-      title: DubApiDetailResponse
     DubJobStatusResponse:
       type: object
       properties:
@@ -259,21 +245,6 @@ components:
       - job_id
       - status
       title: DubJobStatusResponse
-    ApiJobResponseDubbingType:
-      type: string
-      enum:
-      - AUTOMATED
-      - QA
-      description: Dubbing Type
-      title: ApiJobResponseDubbingType
-    ApiJobResponsePriority:
-      type: string
-      enum:
-      - LOW
-      - NORMAL
-      - HIGH
-      description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
-      title: ApiJobResponsePriority
     ApiJobResponse:
       type: object
       properties:
@@ -310,6 +281,13 @@ components:
       - job_id
       - target_locales
       title: ApiJobResponse
+    ApiJobResponseDubbingType:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      description: Dubbing Type
+      title: ApiJobResponseDubbingType
     V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority:
       type: string
       enum:
@@ -318,6 +296,28 @@ components:
       - HIGH
       description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
       title: V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority
+    DubApiDetailResponse:
+      type: object
+      properties:
+        locale:
+          type: string
+        status:
+          type: string
+        error_message:
+          type: string
+        download_url:
+          type: string
+        download_srt_url:
+          type: string
+      title: DubApiDetailResponse
+    ApiJobResponsePriority:
+      type: string
+      enum:
+      - LOW
+      - NORMAL
+      - HIGH
+      description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
+      title: ApiJobResponsePriority
     V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriority:
       type: string
       enum:

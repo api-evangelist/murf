@@ -258,59 +258,11 @@ components:
       - Female
       - NonBinary
       title: ApiVoiceGender
-    GenerateSpeechResponse:
-      type: object
-      properties:
-        audioFile:
-          type: string
-          format: url
-        audioLengthInSeconds:
-          type: number
-          format: double
-        consumedCharacterCount:
-          type: integer
-          format: int64
-          description: Number of characters consumed so far in the current billing cycle.
-        encodedAudio:
-          type: string
-        remainingCharacterCount:
-          type: integer
-          format: int64
-          description: Remaining number of characters available for synthesis in the current billing cycle.
-        warning:
-          type: string
-        wordDurations:
-          type: array
-          items:
-            $ref: '#/components/schemas/WordDurationResponse'
-      required:
-      - audioFile
-      - audioLengthInSeconds
-      - remainingCharacterCount
-      - wordDurations
-      title: GenerateSpeechResponse
-    GenerateSpeechRequestModelVersion:
-      type: string
-      enum:
-      - GEN2
-      default: GEN2
-      description: 'Valid values: GEN2. Audio will be generated using the new and advanced GEN2 model. Outputs from GEN2 sound more natural and high-quality compared to earlier models.'
-      title: GenerateSpeechRequestModelVersion
     text_to_speech_stream_Response_200:
       type: object
       properties: {}
       description: Empty response body
       title: text_to_speech_stream_Response_200
-    StyleDetails:
-      type: object
-      properties:
-        availableStyles:
-          type: array
-          items:
-            type: string
-        detail:
-          type: string
-      title: StyleDetails
     GenerateSpeechStreamingRequest:
       type: object
       properties:
@@ -371,12 +323,90 @@ components:
       - text
       - voiceId
       title: GenerateSpeechStreamingRequest
+    GenerateSpeechResponse:
+      type: object
+      properties:
+        audioFile:
+          type: string
+          format: url
+        audioLengthInSeconds:
+          type: number
+          format: double
+        consumedCharacterCount:
+          type: integer
+          format: int64
+          description: Number of characters consumed so far in the current billing cycle.
+        encodedAudio:
+          type: string
+        remainingCharacterCount:
+          type: integer
+          format: int64
+          description: Remaining number of characters available for synthesis in the current billing cycle.
+        warning:
+          type: string
+        wordDurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordDurationResponse'
+      required:
+      - audioFile
+      - audioLengthInSeconds
+      - remainingCharacterCount
+      - wordDurations
+      title: GenerateSpeechResponse
     PronunciationDetailType:
       type: string
       enum:
       - IPA
       - SAY_AS
       title: PronunciationDetailType
+    PronunciationDetail:
+      type: object
+      properties:
+        pronunciation:
+          type: string
+        type:
+          $ref: '#/components/schemas/PronunciationDetailType'
+      description: "An object used to define custom pronunciations. \n\n Example 1: {\"live\":{\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}. \n\n Example 2: {\"2022\":{\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}"
+      title: PronunciationDetail
+    WordDurationResponse:
+      type: object
+      properties:
+        endMs:
+          type: integer
+        pitchScaleMaximum:
+          type: number
+          format: double
+          description: This field has been deprecated.
+        pitchScaleMinimum:
+          type: number
+          format: double
+          description: This field has been deprecated.
+        sourceWordIndex:
+          type: integer
+          description: This field has been deprecated.
+        startMs:
+          type: integer
+        word:
+          type: string
+      title: WordDurationResponse
+    GenerateSpeechRequestModelVersion:
+      type: string
+      enum:
+      - GEN2
+      default: GEN2
+      description: 'Valid values: GEN2. Audio will be generated using the new and advanced GEN2 model. Outputs from GEN2 sound more natural and high-quality compared to earlier models.'
+      title: GenerateSpeechRequestModelVersion
+    StyleDetails:
+      type: object
+      properties:
+        availableStyles:
+          type: array
+          items:
+            type: string
+        detail:
+          type: string
+      title: StyleDetails
     GenerateSpeechRequest:
       type: object
       properties:
@@ -448,33 +478,3 @@ components:
       - text
       - voiceId
       title: GenerateSpeechRequest
-    PronunciationDetail:
-      type: object
-      properties:
-        pronunciation:
-          type: string
-        type:
-          $ref: '#/components/schemas/PronunciationDetailType'
-      description: "An object used to define custom pronunciations. \n\n Example 1: {\"live\":{\"type\": \"IPA\", \"pronunciation\": \"laɪv\"}}. \n\n Example 2: {\"2022\":{\"type\": \"SAY_AS\", \"pronunciation\": \"twenty twenty two\"}}"
-      title: PronunciationDetail
-    WordDurationResponse:
-      type: object
-      properties:
-        endMs:
-          type: integer
-        pitchScaleMaximum:
-          type: number
-          format: double
-          description: This field has been deprecated.
-        pitchScaleMinimum:
-          type: number
-          format: double
-          description: This field has been deprecated.
-        sourceWordIndex:
-          type: integer
-          description: This field has been deprecated.
-        startMs:
-          type: integer
-        word:
-          type: string
-      title: WordDurationResponse
