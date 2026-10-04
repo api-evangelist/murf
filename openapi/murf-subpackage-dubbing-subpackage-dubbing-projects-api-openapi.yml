@@ -214,32 +214,6 @@ components:
       - dubbing_type
       - target_locales
       title: ApiCreateProjectRequest
-    ApiProjectResponseDubbingType:
-      type: string
-      enum:
-      - AUTOMATED
-      - QA
-      description: Dubbing Type
-      title: ApiProjectResponseDubbingType
-    ApiCreateProjectRequestDubbingType:
-      type: string
-      enum:
-      - AUTOMATED
-      - QA
-      title: ApiCreateProjectRequestDubbingType
-    GroupApiProjectResponse:
-      type: object
-      properties:
-        next:
-          type: string
-        projects:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApiProjectResponse'
-          description: List of Projects
-      required:
-      - projects
-      title: GroupApiProjectResponse
     ApiProjectResponse:
       type: object
       properties:
@@ -267,3 +241,29 @@ components:
       - dubbing_type
       - target_locales
       title: ApiProjectResponse
+    GroupApiProjectResponse:
+      type: object
+      properties:
+        next:
+          type: string
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiProjectResponse'
+          description: List of Projects
+      required:
+      - projects
+      title: GroupApiProjectResponse
+    ApiCreateProjectRequestDubbingType:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      title: ApiCreateProjectRequestDubbingType
+    ApiProjectResponseDubbingType:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      description: Dubbing Type
+      title: ApiProjectResponseDubbingType

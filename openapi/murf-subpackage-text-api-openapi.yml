@@ -85,6 +85,14 @@ components:
           items:
             $ref: '#/components/schemas/Translation'
       title: MurfApiTranslationResponse
+    CharacterCount:
+      type: object
+      properties:
+        total_source_text_length:
+          type: integer
+        total_translated_text_length:
+          type: integer
+      title: CharacterCount
     Metadata:
       type: object
       properties:
@@ -96,22 +104,6 @@ components:
         target_language:
           type: string
       title: Metadata
-    CharacterCount:
-      type: object
-      properties:
-        total_source_text_length:
-          type: integer
-        total_translated_text_length:
-          type: integer
-      title: CharacterCount
-    Translation:
-      type: object
-      properties:
-        source_text:
-          type: string
-        translated_text:
-          type: string
-      title: Translation
     MurfApiTranslationRequest:
       type: object
       properties:
@@ -127,3 +119,11 @@ components:
       - targetLanguage
       - texts
       title: MurfApiTranslationRequest
+    Translation:
+      type: object
+      properties:
+        source_text:
+          type: string
+        translated_text:
+          type: string
+      title: Translation
