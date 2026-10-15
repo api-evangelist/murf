@@ -2,6 +2,7 @@ generated: '2026-10-13'
 method: searched
 checked:
 - https://aws.amazon.com/marketplace/
+- https://github.com/livekit/agents/tree/main/livekit-plugins
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -20,3 +21,22 @@ edges:
   seller_name: Murf Inc
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: LiveKit Agents
+  partner: livekit
+  partner_match: framework
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-murf
+  coverage_role:
+  - tts
+  framework_signals:
+    packages:
+    - livekit-plugins-murf
+    roles:
+    - tts
+    vendor_domain: murf.ai
+  matched_by: verified-domain-table
+  detected_by: sweep-voice-ai.py
+  first_seen: '2026-10-15'
