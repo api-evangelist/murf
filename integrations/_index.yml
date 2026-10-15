@@ -49,7 +49,7 @@
     app_slug: murf
     beta: false
     builder: unknown (not in the directory record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: murf-n8n
   label: n8n
@@ -76,5 +76,5 @@
     published: '2025-11-13T08:21:11.533Z'
     matched_on: publisher-email
     builder: provider (package published from the provider's own domain)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
