@@ -215,6 +215,65 @@ paths:
                 description: Any type
 components:
   schemas:
+    ApiJobResponseDubbingType:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      description: Dubbing Type
+      title: ApiJobResponseDubbingType
+    DubJobStatusResponse:
+      type: object
+      properties:
+        project_id:
+          type: string
+          description: Your Project Id
+        job_id:
+          type: string
+          description: Your Job Id
+        status:
+          type: string
+          description: Your Job Status
+        download_details:
+          type: array
+          items:
+            $ref: '#/components/schemas/DubApiDetailResponse'
+        credits_used:
+          type: integer
+          format: int64
+        credits_remaining:
+          type: integer
+          format: int64
+        failure_reason:
+          type: string
+        failure_code:
+          type: string
+      required:
+      - job_id
+      - status
+      title: DubJobStatusResponse
+    DubApiDetailResponse:
+      type: object
+      properties:
+        locale:
+          type: string
+        status:
+          type: string
+        error_message:
+          type: string
+        download_url:
+          type: string
+        download_srt_url:
+          type: string
+      title: DubApiDetailResponse
+    V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority:
+      type: string
+      enum:
+      - LOW
+      - NORMAL
+      - HIGH
+      description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
+      title: V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority
     ApiJobResponsePriority:
       type: string
       enum:
@@ -259,20 +318,6 @@ components:
       - job_id
       - target_locales
       title: ApiJobResponse
-    DubApiDetailResponse:
-      type: object
-      properties:
-        locale:
-          type: string
-        status:
-          type: string
-        error_message:
-          type: string
-        download_url:
-          type: string
-        download_srt_url:
-          type: string
-      title: DubApiDetailResponse
     V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriority:
       type: string
       enum:
@@ -281,48 +326,3 @@ components:
       - HIGH
       description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
       title: V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriority
-    V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority:
-      type: string
-      enum:
-      - LOW
-      - NORMAL
-      - HIGH
-      description: 'Priority of the job. Allowed values: LOW, NORMAL, HIGH'
-      title: V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority
-    DubJobStatusResponse:
-      type: object
-      properties:
-        project_id:
-          type: string
-          description: Your Project Id
-        job_id:
-          type: string
-          description: Your Job Id
-        status:
-          type: string
-          description: Your Job Status
-        download_details:
-          type: array
-          items:
-            $ref: '#/components/schemas/DubApiDetailResponse'
-        credits_used:
-          type: integer
-          format: int64
-        credits_remaining:
-          type: integer
-          format: int64
-        failure_reason:
-          type: string
-        failure_code:
-          type: string
-      required:
-      - job_id
-      - status
-      title: DubJobStatusResponse
-    ApiJobResponseDubbingType:
-      type: string
-      enum:
-      - AUTOMATED
-      - QA
-      description: Dubbing Type
-      title: ApiJobResponseDubbingType

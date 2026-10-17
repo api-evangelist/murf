@@ -75,16 +75,29 @@ paths:
               $ref: '#/components/schemas/MurfApiTranslationRequest'
 components:
   schemas:
-    MurfApiTranslationResponse:
+    Translation:
       type: object
       properties:
-        metadata:
-          $ref: '#/components/schemas/Metadata'
-        translations:
+        source_text:
+          type: string
+        translated_text:
+          type: string
+      title: Translation
+    MurfApiTranslationRequest:
+      type: object
+      properties:
+        targetLanguage:
+          type: string
+          description: The language code for the target translation
+        texts:
           type: array
           items:
-            $ref: '#/components/schemas/Translation'
-      title: MurfApiTranslationResponse
+            type: string
+          description: List of texts to translate
+      required:
+      - targetLanguage
+      - texts
+      title: MurfApiTranslationRequest
     CharacterCount:
       type: object
       properties:
@@ -104,26 +117,13 @@ components:
         target_language:
           type: string
       title: Metadata
-    MurfApiTranslationRequest:
+    MurfApiTranslationResponse:
       type: object
       properties:
-        targetLanguage:
-          type: string
-          description: The language code for the target translation
-        texts:
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        translations:
           type: array
           items:
-            type: string
-          description: List of texts to translate
-      required:
-      - targetLanguage
-      - texts
-      title: MurfApiTranslationRequest
-    Translation:
-      type: object
-      properties:
-        source_text:
-          type: string
-        translated_text:
-          type: string
-      title: Translation
+            $ref: '#/components/schemas/Translation'
+      title: MurfApiTranslationResponse

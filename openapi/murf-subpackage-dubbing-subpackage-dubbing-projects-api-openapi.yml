@@ -180,40 +180,19 @@ paths:
               $ref: '#/components/schemas/ApiUpdateProjectRequest'
 components:
   schemas:
-    ApiUpdateProjectRequest:
+    GroupApiProjectResponse:
       type: object
       properties:
-        target_locales:
+        next:
+          type: string
+        projects:
           type: array
           items:
-            type: string
-          description: List of target locales
+            $ref: '#/components/schemas/ApiProjectResponse'
+          description: List of Projects
       required:
-      - target_locales
-      title: ApiUpdateProjectRequest
-    ApiCreateProjectRequest:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Your Project Name
-        source_locale:
-          type: string
-          description: Source Locale
-        dubbing_type:
-          $ref: '#/components/schemas/ApiCreateProjectRequestDubbingType'
-        description:
-          type: string
-        target_locales:
-          type: array
-          items:
-            type: string
-          description: List of target locales
-      required:
-      - name
-      - dubbing_type
-      - target_locales
-      title: ApiCreateProjectRequest
+      - projects
+      title: GroupApiProjectResponse
     ApiProjectResponse:
       type: object
       properties:
@@ -241,25 +220,17 @@ components:
       - dubbing_type
       - target_locales
       title: ApiProjectResponse
-    GroupApiProjectResponse:
+    ApiUpdateProjectRequest:
       type: object
       properties:
-        next:
-          type: string
-        projects:
+        target_locales:
           type: array
           items:
-            $ref: '#/components/schemas/ApiProjectResponse'
-          description: List of Projects
+            type: string
+          description: List of target locales
       required:
-      - projects
-      title: GroupApiProjectResponse
-    ApiCreateProjectRequestDubbingType:
-      type: string
-      enum:
-      - AUTOMATED
-      - QA
-      title: ApiCreateProjectRequestDubbingType
+      - target_locales
+      title: ApiUpdateProjectRequest
     ApiProjectResponseDubbingType:
       type: string
       enum:
@@ -267,3 +238,32 @@ components:
       - QA
       description: Dubbing Type
       title: ApiProjectResponseDubbingType
+    ApiCreateProjectRequestDubbingType:
+      type: string
+      enum:
+      - AUTOMATED
+      - QA
+      title: ApiCreateProjectRequestDubbingType
+    ApiCreateProjectRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Your Project Name
+        source_locale:
+          type: string
+          description: Source Locale
+        dubbing_type:
+          $ref: '#/components/schemas/ApiCreateProjectRequestDubbingType'
+        description:
+          type: string
+        target_locales:
+          type: array
+          items:
+            type: string
+          description: List of target locales
+      required:
+      - name
+      - dubbing_type
+      - target_locales
+      title: ApiCreateProjectRequest
