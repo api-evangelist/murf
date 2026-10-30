@@ -1,4 +1,4 @@
-# Murf (murf)
+# Murf
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,63 +66,127 @@
 
 Murf is an AI voice generation platform offering studio-quality voiceovers in 20+ languages with 130+ voices. Public APIs include Falcon TTS (ultra-fast streaming), Text-to-Speech Gen 2 (studio quality), Dubbing, Voice Changer, Translation, and Voice Isolator. The Murf API is REST-based at https://api.murf.ai with regional alternatives (us-east, us-west, in, global). OpenAPI 3.1 published.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/murf/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/murf/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Voice · TTS · Voiceover · Dubbing · Audio · Real-Time
 
-## Tags
+## Murf on APIs.io
 
-- AI
-- Voice
-- TTS
-- Voiceover
-- Dubbing
-- Audio
-- Realtime
+Everything profiled for Murf is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/murf/](https://apis.io/providers/murf/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (7)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-19
+- [Murf Subpackage Auth API](https://apis.io/apis/murf/murf-subpackage-auth-api/) — The subpackage_auth API from Murf — 1 operation(s) for subpackage_auth.
+- [Murf subpackage_dubbing.subpackage_dubbing/jobs API](https://apis.io/apis/murf/murf-subpackage-dubbing-subpackage-dubbing-jobs-api/) — The subpackage_dubbing.subpackage_dubbing/jobs API from Murf — 3 operation(s) for subpackage_dubbing.subpackage_dubbing/jobs.
+- [Murf Subpackage Dubbing.subpackage Dubbing/languages API](https://apis.io/apis/murf/murf-subpackage-dubbing-subpackage-dubbing-languages-api/) — The subpackage_dubbing.subpackage_dubbing/languages API from Murf — 2 operation(s) for subpackage_dubbing.subpackage_dubbing/languages.
+- [Murf Subpackage Dubbing.subpackage Dubbing/projects API](https://apis.io/apis/murf/murf-subpackage-dubbing-subpackage-dubbing-projects-api/) — The subpackage_dubbing.subpackage_dubbing/projects API from Murf — 3 operation(s) for subpackage_dubbing.subpackage_dubbing/projects.
+- [Murf Subpackage Text API](https://apis.io/apis/murf/murf-subpackage-text-api/) — The subpackage_text API from Murf — 1 operation(s) for subpackage_text.
+- [Murf Subpackage Text To Speech API](https://apis.io/apis/murf/murf-subpackage-texttospeech-api/) — The subpackage_textToSpeech API from Murf — 3 operation(s) for subpackage_texttospeech.
+- [Murf Subpackage Voice Changer API](https://apis.io/apis/murf/murf-subpackage-voicechanger-api/) — The subpackage_voiceChanger API from Murf — 1 operation(s) for subpackage_voicechanger.
 
-## APIs
+### Published properties
 
-### Murf API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API for Falcon TTS streaming, Gen 2 TTS, Dubbing, Voice Changer, Translation, and Voice Isolator. Falcon TTS streams at $0.01/min with under 130ms time-to-first-audio. Multi-region: us-east, us-west, India, plus global auto-routing. OpenAPI at https://murf.ai/api/docs/openapi.yaml.
+#### Agentic access (1)
 
-- **Human URL:** [https://murf.ai/api/docs/introduction/overview](https://murf.ai/api/docs/introduction/overview)
-- **Base URL:** `https://api.murf.ai`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Murf Agentic Access](https://apis.io/agentic-access/murf/murf-agentic-access/)
 
-- TTS
-- Streaming
-- Dubbing
-- Voice Changer
-- Translation
+#### Collections (8)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://murf.ai/api/docs/introduction/overview)
-- [OpenAPI](openapi/murf-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/murf.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/murf.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Sign Up](https://murf.ai/api/dashboard)
-- [Pricing](https://murf.ai/api/pricing)
-- [Git Hub](https://github.com/murf-ai/murf-cookbook)
+- [API Reference](https://apis.io/collections/murf/open-murf/)
+- [API Reference subpackage_auth API](https://apis.io/collections/murf/open-murf-subpackage-auth-api/)
+- [API Reference subpackage_auth subpackage_dubbing.subpackage_dubbing/jobs API](https://apis.io/collections/murf/open-murf-subpackage-dubbing-subpackage-dubbing-jobs-api/)
+- [API Reference subpackage_auth subpackage_dubbing.subpackage_dubbing/languages API](https://apis.io/collections/murf/open-murf-subpackage-dubbing-subpackage-dubbing-languages-api/)
+- [API Reference subpackage_auth subpackage_dubbing.subpackage_dubbing/projects API](https://apis.io/collections/murf/open-murf-subpackage-dubbing-subpackage-dubbing-projects-api/)
+- [API Reference subpackage_auth subpackage_text API](https://apis.io/collections/murf/open-murf-subpackage-text-api/)
+- [API Reference subpackage_auth subpackage_textToSpeech API](https://apis.io/collections/murf/open-murf-subpackage-texttospeech-api/)
+- [API Reference subpackage_auth subpackage_voiceChanger API](https://apis.io/collections/murf/open-murf-subpackage-voicechanger-api/)
 
-## Common Properties
+#### Security (2)
 
-- [LinkedIn](https://www.linkedin.com/company/murf-ai)
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Murf Domain Security](https://apis.io/security/murf/murf-domain-security/)
+- [Murf Trust Center](https://apis.io/security/murf/murf-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Murf Plans Pricing](https://apis.io/plans/murf/murf-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Murf Rate Limits](https://apis.io/rate-limits/murf/murf-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Murf Finops](https://apis.io/finops/murf/murf-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://murf.ai/)
 - [Documentation](https://murf.ai/api/docs/introduction/overview)
-- [OpenAPI](openapi/murf-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Plans](plans/murf-plans-pricing.yml)
-- [Rate Limits](rate-limits/murf-rate-limits.yml)
-- [Fin Ops](finops/murf-finops.yml)
-- [Integrations](https://murf.ai/integrations)
-- [L L Ms Txt](https://murf.ai/llms.txt)
+- [Blog](https://murf.ai/blog)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 43.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 39.5 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.0** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/murf/](https://apis.io/providers/murf/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Murf: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/murf/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
